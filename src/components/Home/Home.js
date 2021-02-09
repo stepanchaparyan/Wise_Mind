@@ -2,16 +2,29 @@ import React from 'react';
 import { Container, Module, WelcomeText, LongText, LinkStyled } from './HomeStyled';
 import { LINK } from '../../constants';
 
-const Welcome = () => {
+const Home = () => {
   return (
-    <Container>
+    <>
+      <Container>
+        <Module>
+          <WelcomeText>{'welcome'}</WelcomeText>
+          <LongText>{'Wise_Mind'}</LongText>
+          <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
+        </Module>
+      </Container>
+
       <Module>
         <WelcomeText>{'welcome'}</WelcomeText>
         <LongText>{'Wise_Mind'}</LongText>
         <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
       </Module>
-    </Container>
+      <Module>
+        <WelcomeText>{'welcome'}</WelcomeText>
+        <LongText>{'Wise_Mind'}</LongText>
+        <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
+      </Module>
+    </>
   );
 };
 
-export default Welcome;
+export default Home;

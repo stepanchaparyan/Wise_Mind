@@ -10,11 +10,11 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <div>
+        <>
           <Navbar />
           <Routes />
           {/* <Footer /> */}
-        </div>
+        </>
       </Router>
     </ThemeProvider>
   );

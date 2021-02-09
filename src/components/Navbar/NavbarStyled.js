@@ -4,16 +4,16 @@ import { tabletUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   display: flex;
-  background-color: gray;
-  font-weight: 600;
-  font-size: 20px;
-  height: 24px;
-  justify-content: center;
-  padding: 16px 50px 16px 6px;
-  ${tabletUp`
-    padding: 16px 32px;
-    justify-content: space-between;
-  `};
+  justify-content: space-between;
+  padding: 0 24px;
+  align-items: center;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background: ${({ visible }) => (visible ? 'gray' : 'transparent')};
+  opacity: 0.9;
+  text-align: center;
+  transition: background 0.5s;
 `;
 
 export const Logo = styled.img`
