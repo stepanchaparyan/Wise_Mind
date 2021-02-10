@@ -1,40 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Logo, NavLinks, LinkStyled, UserName, Hamburger } from './NavbarStyled';
+import { Container, Logo, NavLinks, StyledLink } from './NavbarStyled';
 import logo from '../../assets/logo.png';
-import hamburger from '../../assets/hamburger.png';
 import { LINK } from '../../constants';
+import { navbarData } from './NavbarData';
+
+const alt = 'logo';
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
-  const alt = 'logo';
-
-  const toggle = () => {
-    setOpen(!open);
-  };
-
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    setVisible(currentScrollPos > 10);
-  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 20) {
+      setVisible(currentScrollPos > 10);
+    }
+  };
+
   return (
     <Container visible={visible}>
       <Link to={LINK.TO.HOME}>
         <Logo src={logo} alt={alt} />
       </Link>
-      <NavLinks open={open}>
-        <LinkStyled to={LINK.TO.HOME}>
-          <UserName>{'Books'}</UserName>
-        </LinkStyled>
+      <NavLinks>
+        {navbarData.map(({ title, url }) => (
+          <StyledLink exact key={title} to={url}>
+            {title.toUpperCase()}
+          </StyledLink>
+        ))}
       </NavLinks>
-      <Hamburger src={hamburger} onClick={toggle}></Hamburger>
     </Container>
   );
 };

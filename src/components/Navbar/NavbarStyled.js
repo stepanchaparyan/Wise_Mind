@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { tabletUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
   padding: 0 24px;
   align-items: center;
   position: fixed;
@@ -27,16 +26,8 @@ export const Logo = styled.img`
   `};
 `;
 
-export const UserName = styled.div`
-  font-weight: 200;
-  margin-top: 8px;
-  ${tabletUp`
-    margin-top: 0;
-  `};
-`;
-
 export const NavLinks = styled.div`
-  display: ${({ open }) => (open ? 'flex' : 'none')};
+  ${'' /* display: ${({ open }) => (open ? 'flex' : 'none')};
   flex-direction: column;
   padding: 10px;
   background: ${props => props.theme.lightGray};
@@ -44,15 +35,19 @@ export const NavLinks = styled.div`
   right: 0px;
   top: 56px;
   height: 120px;
-  z-index: 1;
+  z-index: 1; */}
   ${tabletUp`
     display: flex;
     flex-direction: row;
-    padding: 0;
-    background: none;
+    ${'' /* background: none;
     position: relative;
+    padding: 0;
     top: 0;
-    height: 0;
+    height: 0; */}
+    margin-left: 160px;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.4px;
   `};
 `;
 
@@ -69,14 +64,23 @@ export const Hamburger = styled.img`
   `};
 `;
 
-export const LinkStyled = styled(Link)`
+const activeClassName = 'active';
+
+export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   display: flex;
   text-decoration: none;
-  color: black;
+  color: white;
   margin: 10px 20px;
-  align-self: center;
   ${tabletUp`
-    margin: 0 16px 0 0;
+    margin: 0 20px;
     align-self: auto;
   `};
+  &.${activeClassName} {
+    color: #71b347;
+    font-weight: bold;
+  }
+  :hover {
+    color: #71b347;
+    transition: color 0.5s;
+  }
 `;

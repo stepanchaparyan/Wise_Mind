@@ -1,6 +1,8 @@
 export const LINK = {
   TO: {
     HOME: '/',
-    PRODUCTS: '/products'
+    ABOUT: '/about',
+    CARRIER_OPPORTUNITIES: '/carrier_opportunities',
+    NEWSLETTER: '/news_letter'
   }
 };
