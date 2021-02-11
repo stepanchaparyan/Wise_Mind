@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Logo, NavLinks, StyledLink } from './NavbarStyled';
+import {
+  Container,
+  Logo,
+  NavLinks,
+  StyledLink,
+  Dots,
+  Dot,
+  DotsRoutesContainer,
+  DotsRoutes
+} from './NavbarStyled';
 import logo from '../../assets/logo.png';
 import { LINK } from '../../constants';
 import { navbarData } from './NavbarData';
@@ -34,6 +43,16 @@ const Navbar = () => {
           </StyledLink>
         ))}
       </NavLinks>
+      <Dots>
+        <Dot></Dot>
+        <Dot></Dot>
+        <Dot></Dot>
+        <DotsRoutesContainer>
+          <DotsRoutes>Contact Us</DotsRoutes>
+          <DotsRoutes>Our Services</DotsRoutes>
+          <DotsRoutes>Client Resources</DotsRoutes>
+        </DotsRoutesContainer>
+      </Dots>
     </Container>
   );
 };

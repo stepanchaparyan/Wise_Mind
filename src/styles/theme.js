@@ -6,7 +6,8 @@ const theme = {
   white: 'white',
   lightGray: '#F5F5F5',
   veryLightGray: '#f8f8f8',
-  darkgray: 'darkgray'
+  darkgray: 'darkgray',
+  navGreen: '#71b347'
 };
 
 export default theme;

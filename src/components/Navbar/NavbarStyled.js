@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 0 24px;
   align-items: center;
   position: fixed;
-  height: 60px;
+  height: 80px;
   width: 100%;
   background: ${({ visible }) => (visible ? 'gray' : 'transparent')};
   opacity: 0.9;
@@ -44,7 +44,7 @@ export const NavLinks = styled.div`
     padding: 0;
     top: 0;
     height: 0; */}
-    margin-left: 160px;
+    margin-left: 140px;
     font-family: sans-serif;
     font-size: 14px;
     letter-spacing: 0.4px;
@@ -76,11 +76,55 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
     align-self: auto;
   `};
   &.${activeClassName} {
-    color: #71b347;
+    color: ${props => props.theme.navGreen};
     font-weight: bold;
   }
   :hover {
-    color: #71b347;
+    color: ${props => props.theme.navGreen};
     transition: color 0.5s;
   }
+`;
+
+export const Dots = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  cursor: pointer;
+  :hover > div {
+    display: flex;
+  }
+  :hover > p {
+    background-color: ${props => props.theme.navGreen};
+  }
+`;
+
+export const Dot = styled.p`
+  width: 4px;
+  height: 4px;
+  margin: 1px 0;
+  border-radius: 50%;
+  background-color: white;
+`;
+
+export const DotsRoutesContainer = styled.div`
+  display: none;
+  flex-direction: column;
+  background-color: black;
+  margin-left: -160px;
+  width: 180px;
+  height: 110px;
+  position: absolute;
+  top: 60px;
+  padding: 8px 4px 4px;
+  border-radius: 3%;
+  :hover {
+    display: flex;
+  }
+`;
+
+export const DotsRoutes = styled.div`
+  display: flex;
+  margin: 6px 20px;
+  color: white;
+  text-align: center;
 `;
