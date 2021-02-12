@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { tabletUp } from '../../styles/mediaQueries/mixins';
-import MainImage from '../../assets/bg.jpg';
 
 export const Container = styled.div`
-  background-image: url(${MainImage});
+  background-color: lightGreen;
   width: 100%;
 `;
 

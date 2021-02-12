@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { tabletUp } from '../../styles/mediaQueries/mixins';
+import PaperPlaneWhite from '../../assets/paper-plane-16_white.png';
+import PaperPlaneGray from '../../assets/paper-plane-16_gray.png';
 
 export const Container = styled.div`
   display: flex;
-  padding: 0 24px;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   height: 80px;
@@ -15,40 +17,23 @@ export const Container = styled.div`
   transition: background 0.5s;
 `;
 
+export const LogoContainer = styled(NavLink)`
+  margin: 0;
+  padding: 0;
+  padding-left: 100px;
+`;
+
 export const Logo = styled.img`
-  width: 260px;
-  height: 20px;
-  padding-top: 2px;
-  ${tabletUp`
-    width: 290px;
-    height: 23px;
-    padding: 0;
-  `};
+  width: 100px;
 `;
 
 export const NavLinks = styled.div`
-  ${'' /* display: ${({ open }) => (open ? 'flex' : 'none')};
-  flex-direction: column;
-  padding: 10px;
-  background: ${props => props.theme.lightGray};
-  position: absolute;
-  right: 0px;
-  top: 56px;
-  height: 120px;
-  z-index: 1; */}
-  ${tabletUp`
-    display: flex;
-    flex-direction: row;
-    ${'' /* background: none;
-    position: relative;
-    padding: 0;
-    top: 0;
-    height: 0; */}
-    margin-left: 140px;
-    font-family: sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.4px;
-  `};
+  display: flex;
+  margin-left: 250px;
+  font-family: sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  margin: auto;
 `;
 
 export const Hamburger = styled.img`
@@ -85,10 +70,14 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   }
 `;
 
+export const NavLinkContainer = styled.div`
+  display: flex;
+`;
+
 export const Dots = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  padding: 20px;
   cursor: pointer;
   :hover > div {
     display: flex;
@@ -125,6 +114,41 @@ export const DotsRoutesContainer = styled.div`
 export const DotsRoutes = styled.div`
   display: flex;
   margin: 6px 20px;
-  color: white;
+  color: gray;
   text-align: center;
+  :hover {
+    color: white;
+  }
+`;
+
+export const SendRequestContainer = styled.div`
+  padding-right: 70px;
+`;
+
+export const SendRequestButton = styled(NavLink)`
+  display: flex;
+  padding: 16px 34px;
+  border: solid 1px white;
+  background: transparent;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  :hover {
+    background: white;
+    color: gray;
+  }
+  :hover > div {
+    background-image: url(${PaperPlaneGray});
+  }
+`;
+
+export const PaperPlaneIcon = styled.div`
+  width: 10px;
+  height: 14px;
+  padding: 2px 0 0 6px;
+  margin-left: 10px;
+  background-image: url(${PaperPlaneWhite});
 `;

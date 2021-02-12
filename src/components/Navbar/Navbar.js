@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import {
   Container,
+  LogoContainer,
   Logo,
   NavLinks,
   StyledLink,
   Dots,
   Dot,
   DotsRoutesContainer,
-  DotsRoutes
+  DotsRoutes,
+  SendRequestButton,
+  NavLinkContainer,
+  SendRequestContainer,
+  PaperPlaneIcon
 } from './NavbarStyled';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.jpg';
 import { LINK } from '../../constants';
 import { navbarData } from './NavbarData';
 
@@ -33,26 +37,34 @@ const Navbar = () => {
 
   return (
     <Container visible={visible}>
-      <Link to={LINK.TO.HOME}>
+      <LogoContainer to={LINK.TO.HOME}>
         <Logo src={logo} alt={alt} />
-      </Link>
-      <NavLinks>
-        {navbarData.map(({ title, url }) => (
-          <StyledLink exact key={title} to={url}>
-            {title.toUpperCase()}
-          </StyledLink>
-        ))}
-      </NavLinks>
-      <Dots>
-        <Dot></Dot>
-        <Dot></Dot>
-        <Dot></Dot>
-        <DotsRoutesContainer>
-          <DotsRoutes>Contact Us</DotsRoutes>
-          <DotsRoutes>Our Services</DotsRoutes>
-          <DotsRoutes>Client Resources</DotsRoutes>
-        </DotsRoutesContainer>
-      </Dots>
+      </LogoContainer>
+      <NavLinkContainer>
+        <NavLinks>
+          {navbarData.map(({ title, url }) => (
+            <StyledLink exact key={title} to={url}>
+              {title.toUpperCase()}
+            </StyledLink>
+          ))}
+        </NavLinks>
+        <Dots>
+          <Dot></Dot>
+          <Dot></Dot>
+          <Dot></Dot>
+          <DotsRoutesContainer>
+            <DotsRoutes>Contact Us</DotsRoutes>
+            <DotsRoutes>Our Services</DotsRoutes>
+            <DotsRoutes>Client Resources</DotsRoutes>
+          </DotsRoutesContainer>
+        </Dots>
+      </NavLinkContainer>
+      <SendRequestContainer>
+        <SendRequestButton to={LINK.TO.CONTACT_US}>
+          Send Request
+          <PaperPlaneIcon />
+        </SendRequestButton>
+      </SendRequestContainer>
     </Container>
   );
 };

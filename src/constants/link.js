@@ -3,6 +3,7 @@ export const LINK = {
     HOME: '/',
     ABOUT: '/about',
     CARRIER_OPPORTUNITIES: '/carrier_opportunities',
-    NEWSLETTER: '/news_letter'
+    NEWSLETTER: '/news_letter',
+    CONTACT_US: '/contact_us'
   }
 };
