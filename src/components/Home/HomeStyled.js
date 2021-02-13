@@ -5,7 +5,10 @@ import MainImage from '../../assets/bg.jpg';
 
 export const Container = styled.div`
   background-image: url(${MainImage});
-  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const Module = styled.div`
@@ -15,16 +18,27 @@ export const Module = styled.div`
   padding: 16px;
 `;
 
-export const WelcomeText = styled.div`
-  margin-top: 80px;
-  font-size: 30px;
-  padding: 32px 32px 0 32px;
-  height: 110px;
+export const SmallText = styled.div`
+  margin-top: 170px;
+  padding: 16px 0px;
+  font-family: 'Montserrat';
+  color: ${props => props.theme.white};
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 `;
 
-export const LongText = styled.div`
-  font-size: 20px;
-  padding: 12px;
+export const TitleText = styled.div`
+  font-family: 'Montserrat';
+  color: ${props => props.theme.white};
+  font-size: 55px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 export const LinkStyled = styled(Link)`
@@ -35,4 +49,13 @@ export const LinkStyled = styled(Link)`
   ${tabletUp`
     font-size: 32px;
   `};
+`;
+
+export const LongText = styled.div`
+  color: ${props => props.theme.white};
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 16px;
 `;

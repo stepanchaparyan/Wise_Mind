@@ -14,7 +14,7 @@ export const navbarData = [
     url: LINK.TO.CARRIER_OPPORTUNITIES
   },
   {
-    title: 'NewsLetter',
-    url: LINK.TO.NEWSLETTER
+    title: 'Client Resources',
+    url: LINK.TO.CLIENT_RESOURCES
   }
 ];

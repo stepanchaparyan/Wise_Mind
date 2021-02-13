@@ -24,7 +24,7 @@ export const LogoContainer = styled(NavLink)`
 `;
 
 export const Logo = styled.img`
-  width: 100px;
+  width: 60px;
 `;
 
 export const NavLinks = styled.div`

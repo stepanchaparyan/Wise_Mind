@@ -14,7 +14,7 @@ import {
   SendRequestContainer,
   PaperPlaneIcon
 } from './NavbarStyled';
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 import { LINK } from '../../constants';
 import { navbarData } from './NavbarData';
 
@@ -55,7 +55,6 @@ const Navbar = () => {
           <DotsRoutesContainer>
             <DotsRoutes>Contact Us</DotsRoutes>
             <DotsRoutes>Our Services</DotsRoutes>
-            <DotsRoutes>Client Resources</DotsRoutes>
           </DotsRoutesContainer>
         </Dots>
       </NavLinkContainer>
