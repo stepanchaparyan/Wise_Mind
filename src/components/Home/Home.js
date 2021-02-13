@@ -1,17 +1,34 @@
 import React from 'react';
-import { Container, Module, WelcomeText, LongText, LinkStyled } from './HomeStyled';
+import { Container, Module, SmallText, TitleText, LinkStyled, LongText } from './HomeStyled';
 import { LINK } from '../../constants';
 
-const Welcome = () => {
+const Home = () => {
+  function handleOnClick(e) {
+    e.preventDefault();
+    const newURL = 'http://google.com';
+    window.open(newURL, '_blank');
+  }
+
   return (
-    <Container>
+    <>
+      <Container>
+        <Module>
+          <SmallText>Mental health Services</SmallText>
+          <TitleText>Wise_Mind</TitleText>
+          <LongText>
+            Your solution to having more effective/productive mental fortitude for tomorrow.
+          </LongText>
+        </Module>
+      </Container>
+
       <Module>
-        <WelcomeText>{'welcome'}</WelcomeText>
-        <LongText>{'Wise_Mind'}</LongText>
-        <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
+        <SmallText>{'welcome'}</SmallText>
+        <LinkStyled onClick={handleOnClick} target="_blank">
+          {'href GO to Google'}
+        </LinkStyled>
       </Module>
-    </Container>
+    </>
   );
 };
 
-export default Welcome;
+export default Home;

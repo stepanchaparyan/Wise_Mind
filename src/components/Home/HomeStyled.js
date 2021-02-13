@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { tabletUp } from '../../styles/mediaQueries/mixins';
+import MainImage from '../../assets/bg.jpg';
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  color: ${props => props.theme.cadetblue};
-  padding: 0 32px 50px 32px;
-  font-weight: 600;
-  font-size: 24px;
-  text-align: center;
+  background-image: url(${MainImage});
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const Module = styled.div`
@@ -19,29 +18,27 @@ export const Module = styled.div`
   padding: 16px;
 `;
 
-export const WelcomeText = styled.div`
-  font-size: 30px;
-  padding: 32px 32px 0 32px;
-  height: 110px;
-  ::after {
-    content: '';
-    width: 0px;
-    height: 5px;
-    display: inline-block;
-    background: ${props => props.theme.cadetblue};
-    transition: 500ms;
-  }
-  :hover::after {
-    width: 100%;
-  }
-  ${tabletUp`
-    font-size: 50px;
-  `};
+export const SmallText = styled.div`
+  margin-top: 170px;
+  padding: 16px 0px;
+  font-family: 'Montserrat';
+  color: ${props => props.theme.white};
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 `;
 
-export const LongText = styled.div`
-  font-size: 20px;
-  padding: 12px;
+export const TitleText = styled.div`
+  font-family: 'Montserrat';
+  color: ${props => props.theme.white};
+  font-size: 55px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 export const LinkStyled = styled(Link)`
@@ -52,4 +49,13 @@ export const LinkStyled = styled(Link)`
   ${tabletUp`
     font-size: 32px;
   `};
+`;
+
+export const LongText = styled.div`
+  color: ${props => props.theme.white};
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 16px;
 `;
