@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { tabletUp } from '../../styles/mediaQueries/mixins';
 import MainImage from '../../assets/bg.jpg';
 
 export const Container = styled.div`
@@ -41,14 +39,9 @@ export const TitleText = styled.div`
   text-transform: uppercase;
 `;
 
-export const LinkStyled = styled(Link)`
-  color: ${props => props.theme.cadetblue};
-  margin: 32px;
-  text-decoration: none;
-  font-size: 26px;
-  ${tabletUp`
-    font-size: 32px;
-  `};
+export const ButtonsContainer = styled.div`
+  display: flex;
+  margin-top: 64px;
 `;
 
 export const LongText = styled.div`

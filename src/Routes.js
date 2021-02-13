@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PageNotFound from './components/PageNotFound/PageNotFound';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import CarrierOpportunities from './components/CarrierOpportunities/CarrierOpportunities';
-import ClientResources from './components/ClientResources/ClientResources';
-import ContactUs from './components/ContactUs/ContactUs';
+import PageNotFound from './containers/PageNotFound/PageNotFound';
+import Home from './containers/Home/Home';
+import About from './containers/About/About';
+import CarrierOpportunities from './containers/CarrierOpportunities/CarrierOpportunities';
+import ClientResources from './containers/ClientResources/ClientResources';
+import ContactUs from './containers/ContactUs/ContactUs';
 
 const App = () => {
   return (

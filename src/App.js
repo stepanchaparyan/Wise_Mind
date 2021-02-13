@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import Navbar from './components/Navbar/Navbar';
-// import Footer from './components/layouts/Footer/Footer';
+import Navbar from './containers/Navbar/Navbar';
+// import Footer from './container/layouts/Footer/Footer';
 import Routes from './Routes';
 import theme from '../src/styles/theme';
 
