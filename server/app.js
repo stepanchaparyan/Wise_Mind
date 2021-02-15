@@ -18,7 +18,6 @@ app.use(fileUpload());
 app.use(express.json({ extended: true }));
 
 // API routes
-app.use('/api/books', require('./routes/books'));
 app.use('/api/texts', require('./routes/texts'));
 
 // use static files
