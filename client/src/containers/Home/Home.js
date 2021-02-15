@@ -6,6 +6,7 @@ import Button from '../../components/Button/Button';
 import { Container, Module, SmallText, TitleText, ButtonsContainer, LongText } from './HomeStyled';
 import { LINK } from '../../constants';
 import theme from '../../styles/theme';
+import CoreValues from './CoreValues/CoreValues';
 
 const { lightBlue, lightBlack, white } = theme;
 
@@ -17,9 +18,7 @@ const Home = () => {
   }
 
   const dispatch = useDispatch();
-
   const textsList = useSelector(state => state.texts);
-  const { texts, loading, error } = textsList;
 
   useEffect(() => {
     dispatch(getTexts());
@@ -56,21 +55,7 @@ const Home = () => {
       <div onClick={handleOnClick} target="_blank">
         test
       </div>
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : error ? (
-        <h2>{error}</h2>
-      ) : (
-        texts.map(text => {
-          return (
-            <>
-              <div>{text.title}</div>
-              <div>{text.text}</div>
-              <div>{text.category}</div>
-            </>
-          );
-        })
-      )}
+      <CoreValues textsList={textsList}></CoreValues>
     </>
   );
 };
