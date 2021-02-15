@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getTexts } from '../../redux/actions/textsActions';
 import Button from '../../components/Button/Button';
 import { Container, Module, SmallText, TitleText, ButtonsContainer, LongText } from './HomeStyled';
 import { LINK } from '../../constants';
@@ -12,6 +15,15 @@ const Home = () => {
     const newURL = 'http://google.com';
     window.open(newURL, '_blank');
   }
+
+  const dispatch = useDispatch();
+
+  const textsList = useSelector(state => state.texts);
+  const { texts, loading, error } = textsList;
+
+  useEffect(() => {
+    dispatch(getTexts());
+  }, [dispatch]);
 
   return (
     <>
@@ -42,8 +54,23 @@ const Home = () => {
         </Module>
       </Container>
       <div onClick={handleOnClick} target="_blank">
-        Test
+        test
       </div>
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        texts.map(text => {
+          return (
+            <>
+              <div>{text.title}</div>
+              <div>{text.text}</div>
+              <div>{text.category}</div>
+            </>
+          );
+        })
+      )}
     </>
   );
 };
