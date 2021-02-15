@@ -7,7 +7,9 @@ const theme = {
   veryLightGray: '#f8f8f8',
   darkgray: 'darkgray',
   navGreen: '#71b347',
-  white: '#ffffff'
+  white: '#ffffff',
+  lightBlue: '#1996cd',
+  lightBlack: '#24282b'
 };
 
 export default theme;
