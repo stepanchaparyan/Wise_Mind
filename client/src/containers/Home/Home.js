@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { getTexts } from '../../redux/actions/textsActions';
 import Button from '../../components/Button/Button';
 import { Container, Module, SmallText, TitleText, ButtonsContainer, LongText } from './HomeStyled';
@@ -46,15 +45,13 @@ const Home = () => {
               text="About Us"
               backgroundcolor="transparent"
               backgroundhovercolor={white}
-              withborder
+              borderColor={white}
               to={LINK.CONTACT_US}
             />
           </ButtonsContainer>
         </Module>
       </Container>
-      <div onClick={handleOnClick} target="_blank">
-        test
-      </div>
+      <div onClick={handleOnClick} target="_blank"></div>
       <CoreValues textsList={textsList}></CoreValues>
     </>
   );

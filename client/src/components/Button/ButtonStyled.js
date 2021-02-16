@@ -10,12 +10,15 @@ export const ButtonStyled = styled(Link)`
   border-radius: 3px;
   font-size: 12px;
   letter-spacing: 1px;
-  border: ${({ withborder }) => (withborder ? '1px solid white' : 0)};
+  border: ${({ bordercolor }) => (bordercolor ? `1px solid ${bordercolor}` : 0)};
   color: ${({ textcolor }) => textcolor};
   background-color: ${({ backgroundcolor }) => backgroundcolor};
   :hover {
     background-color: ${({ backgroundhovercolor }) => backgroundhovercolor};
-    color: ${({ texthovercolor }) => texthovercolor};
     transition: background-color 0.5s;
+    color: ${({ texthovercolor }) => texthovercolor};
+    transition: color 0.5s;
+    border: ${({ borderhovercolor }) => borderhovercolor && `1px solid ${borderhovercolor}`};
+    transition: border 0.5s;
   }
 `;

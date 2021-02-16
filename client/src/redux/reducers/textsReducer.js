@@ -1,11 +1,11 @@
 import * as actionTypes from '../constants/textsConstants';
 
-export const textsReducer = (state = { texts: [] }, { type, payload }) => {
+export const textsReducer = (state = { texts: [], loading: false }, { type, payload }) => {
   switch (type) {
     case actionTypes.GET_TEXTS_REQUEST:
       return {
-        loading: true,
-        ...state
+        ...state,
+        loading: true
       };
     case actionTypes.GET_TEXTS_SUCCESS:
       return {

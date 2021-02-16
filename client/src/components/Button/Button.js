@@ -9,7 +9,8 @@ const Button = ({
   texthovercolor,
   backgroundcolor,
   backgroundhovercolor,
-  withborder
+  bordercolor,
+  borderhovercolor
 }) => {
   return (
     <ButtonStyled
@@ -17,7 +18,8 @@ const Button = ({
       texthovercolor={texthovercolor}
       backgroundcolor={backgroundcolor}
       backgroundhovercolor={backgroundhovercolor}
-      withborder={withborder}
+      bordercolor={bordercolor}
+      borderhovercolor={borderhovercolor}
       to={to}
     >
       {text}
@@ -31,7 +33,8 @@ Button.propTypes = {
   texthovercolor: PropTypes.string,
   backgroundcolor: PropTypes.string,
   backgroundhovercolor: PropTypes.string,
-  withborder: PropTypes.bool,
+  bordercolor: PropTypes.string,
+  borderhovercolor: PropTypes.string,
   to: PropTypes.string
 };
 
@@ -41,7 +44,8 @@ Button.defaultProps = {
   texthovercolor: 'black',
   backgroundcolor: 'gray',
   backgroundhovercolor: 'lightGray',
-  withborder: false
+  bordercolor: '',
+  borderhovercolor: ''
 };
 
 export default Button;
