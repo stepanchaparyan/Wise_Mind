@@ -36,6 +36,7 @@ export const ButtonStyled = styled.button`
   font-size: 12px;
   letter-spacing: 1px;
   border: 1px solid gray;
+  cursor: pointer;
   color: ${props => props.theme.midLightGray};
   background-color: transparent;
   transition: color 0.5s;
@@ -78,8 +79,42 @@ export const Container = styled.div`
 // `;
 
 export const Image = styled.img`
+  width: 100%;
+`;
+
+export const Overlay = styled.div`
   max-width: 100%;
-  height: 300px;
+  height: 316px;
+  position: relative;
+  cursor: pointer;
+  :after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  :hover:after {
+    opacity: 0.6;
+  }
+  :hover > span {
+    opacity: 0.9;
+    margin-top: -10px;
+  }
+`;
+
+export const Dots = styled.span`
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transition: all ease 0.5s;
+  opacity: 0;
+  color: white;
 `;
 
 export const TitleText = styled.div`
@@ -105,6 +140,7 @@ export const WhoWeAre = styled.div`
   align-items: center;
   color: ${props => props.theme.midLightBlack};
   align-self: center;
+  padding-bottom: 24px;
 `;
 
 export const WhoWeAreTitleText = styled.div`

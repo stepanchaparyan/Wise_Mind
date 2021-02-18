@@ -13,12 +13,10 @@ export const ButtonStyled = styled(Link)`
   border: ${({ bordercolor }) => (bordercolor ? `1px solid ${bordercolor}` : 0)};
   color: ${({ textcolor }) => textcolor};
   background-color: ${({ backgroundcolor }) => backgroundcolor};
+  transition: background-color 0.5s;
   :hover {
     background-color: ${({ backgroundhovercolor }) => backgroundhovercolor};
-    transition: background-color 0.5s;
     color: ${({ texthovercolor }) => texthovercolor};
-    transition: color 0.5s;
     border: ${({ borderhovercolor }) => borderhovercolor && `1px solid ${borderhovercolor}`};
-    transition: border 0.5s;
   }
 `;

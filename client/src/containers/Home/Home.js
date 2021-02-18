@@ -39,14 +39,14 @@ const Home = () => {
               texthovercolor={white}
               backgroundcolor={lightBlue}
               backgroundhovercolor={lightBlack}
-              to={LINK.CONTACT_US}
+              to={LINK.TO.ABOUT_US}
             />
             <Button
-              text="About Us"
+              text="Contact Us"
               backgroundcolor="transparent"
               backgroundhovercolor={white}
               borderColor={white}
-              to={LINK.CONTACT_US}
+              to={LINK.TO.CONTACT_US}
             />
           </ButtonsContainer>
         </Module>

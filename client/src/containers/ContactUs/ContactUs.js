@@ -7,8 +7,8 @@ const ContactUs = () => {
     <>
       <Container>
         <Module>
-          <WelcomeText>{'About'}</WelcomeText>
-          <LongText>{'About'}</LongText>
+          <WelcomeText>{'ContactUs'}</WelcomeText>
+          <LongText>{'ContactUs'}</LongText>
           <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
         </Module>
       </Container>

@@ -1,10 +1,9 @@
 export const LINK = {
   TO: {
     HOME: '/',
-    ABOUT: '/about',
+    ABOUT_US: '/about_us',
     CARRIER_OPPORTUNITIES: '/carrier_opportunities',
     CLIENT_RESOURCES: '/client_resources',
-    CONTACT_US: '/contact_us',
-    ABOUT_US: '/about_us'
+    CONTACT_US: '/contact_us'
   }
 };

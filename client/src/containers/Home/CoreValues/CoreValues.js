@@ -13,11 +13,18 @@ import {
   TitleText,
   MainText,
   WhoWeAreTitleText,
-  WhoWeAreMainText
+  WhoWeAreMainText,
+  Overlay,
+  Dots
 } from './CoreValuesStyled';
+import Button from '../../../components/Button/Button';
+import theme from '../../../styles/theme';
+import { LINK } from '../../../constants';
 import Core_Values_1 from '../../../assets/core_values_1.jpg';
 import Core_Values_2 from '../../../assets/core_values_2.jpg';
 import Core_Values_3 from '../../../assets/core_values_3.jpg';
+
+const { navGreen, lightBlack, white } = theme;
 
 const CoreValues = ({ textsList }) => {
   const { texts, loading, error } = textsList;
@@ -44,7 +51,10 @@ const CoreValues = ({ textsList }) => {
             <ThreePictures>
               {coreValues.map((text, i) => (
                 <Container key={text?.title}>
-                  <Image src={imgList[i]}></Image>
+                  <Overlay>
+                    <Dots>TODO</Dots>
+                    <Image src={imgList[i]}></Image>
+                  </Overlay>
                   <TitleText>{text?.title}</TitleText>
                   <MainText>{text?.text}</MainText>
                 </Container>
@@ -53,6 +63,14 @@ const CoreValues = ({ textsList }) => {
             <WhoWeAre>
               <WhoWeAreTitleText>{whoWeAre?.title}</WhoWeAreTitleText>
               <WhoWeAreMainText>{whoWeAre?.text}</WhoWeAreMainText>
+              <Button
+                text="About Us"
+                textcolor={white}
+                texthovercolor={white}
+                backgroundcolor={navGreen}
+                backgroundhovercolor={lightBlack}
+                to={LINK.TO.ABOUT_US}
+              />
             </WhoWeAre>
           </RightPart>
         </>

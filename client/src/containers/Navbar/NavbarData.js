@@ -7,7 +7,7 @@ export const navbarData = [
   },
   {
     title: 'About',
-    url: LINK.TO.ABOUT
+    url: LINK.TO.ABOUT_US
   },
   {
     title: 'Carrier opportunities',
