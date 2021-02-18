@@ -1,9 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CoreValesContainer, LeftPart, RightPart, ButtonStyled, Title } from './CoreValuesStyled';
+import {
+  CoreValesContainer,
+  LeftPart,
+  RightPart,
+  ButtonStyled,
+  Title,
+  ThreePictures,
+  WhoWeAre,
+  Container,
+  Image,
+  TitleText,
+  MainText,
+  WhoWeAreTitleText,
+  WhoWeAreMainText
+} from './CoreValuesStyled';
+import Core_Values_1 from '../../../assets/core_values_1.jpg';
+import Core_Values_2 from '../../../assets/core_values_2.jpg';
+import Core_Values_3 from '../../../assets/core_values_3.jpg';
 
 const CoreValues = ({ textsList }) => {
   const { texts, loading, error } = textsList;
+
+  const coreValueMain = texts.find(text => text.category === 'coreValuesMain');
+  const whoWeAre = texts.find(text => text.category === 'whoWeAre');
+  const coreValues = texts.filter(text => text.category === 'coreValues');
+  const imgList = [Core_Values_1, Core_Values_2, Core_Values_3]; // TODO will be removed
 
   return (
     <CoreValesContainer>
@@ -13,28 +35,25 @@ const CoreValues = ({ textsList }) => {
         <h2>{error}</h2>
       ) : (
         <>
-          {texts.map((text, i) => {
-            if (i === 0) {
-              return (
-                <LeftPart key={text.title}>
-                  <Title>{text.title}</Title>
-                  <div>{text.text}</div>
-                  <ButtonStyled>Read More</ButtonStyled>
-                </LeftPart>
-              );
-            }
-          })}
+          <LeftPart>
+            <Title>{coreValueMain?.title}</Title>
+            <div>{coreValueMain?.text}</div>
+            <ButtonStyled>Read More</ButtonStyled>
+          </LeftPart>
           <RightPart>
-            {texts.map((text, i) => {
-              if (i > 0) {
-                return (
-                  <div key={text.title}>
-                    <div>{text.title}</div>
-                    <div>{text.text}</div>
-                  </div>
-                );
-              }
-            })}
+            <ThreePictures>
+              {coreValues.map((text, i) => (
+                <Container key={text?.title}>
+                  <Image src={imgList[i]}></Image>
+                  <TitleText>{text?.title}</TitleText>
+                  <MainText>{text?.text}</MainText>
+                </Container>
+              ))}
+            </ThreePictures>
+            <WhoWeAre>
+              <WhoWeAreTitleText>{whoWeAre?.title}</WhoWeAreTitleText>
+              <WhoWeAreMainText>{whoWeAre?.text}</WhoWeAreMainText>
+            </WhoWeAre>
           </RightPart>
         </>
       )}

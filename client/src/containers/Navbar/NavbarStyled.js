@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  height: 80px;
+  height: 60px;
   width: 100%;
   background: ${({ visible }) => (visible ? 'gray' : 'transparent')};
   opacity: 0.9;
@@ -24,7 +24,7 @@ export const LogoContainer = styled(NavLink)`
 `;
 
 export const Logo = styled.img`
-  width: 60px;
+  width: 50px;
 `;
 
 export const NavLinks = styled.div`
