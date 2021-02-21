@@ -8,6 +8,7 @@ import theme from '../../styles/theme';
 import CoreValues from './CoreValues/CoreValues';
 
 const { lightBlue, lightBlack, white } = theme;
+const alt = 'mainImg';
 
 const Home = () => {
   function handleOnClick(e) {
@@ -25,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <Container>
+      <Container alt={alt}>
         <Module>
           <SmallText>Mental health Services</SmallText>
           <TitleText>Wise_Mind</TitleText>

@@ -3,6 +3,7 @@ import MainImage from '../../assets/bg.jpg';
 
 export const Container = styled.div`
   background-image: url(${MainImage});
+  width: 100%;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;

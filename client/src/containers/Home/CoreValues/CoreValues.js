@@ -33,6 +33,7 @@ const CoreValues = ({ textsList }) => {
   const whoWeAre = texts.find(text => text.category === 'whoWeAre');
   const coreValues = texts.filter(text => text.category === 'coreValues');
   const imgList = [Core_Values_1, Core_Values_2, Core_Values_3]; // TODO will be removed
+  const alt = 'image';
 
   return (
     <CoreValesContainer>
@@ -53,7 +54,7 @@ const CoreValues = ({ textsList }) => {
                 <Container key={text?.title}>
                   <Overlay>
                     <Dots>TODO</Dots>
-                    <Image src={imgList[i]}></Image>
+                    <Image src={imgList[i]} alt={alt}></Image>
                   </Overlay>
                   <TitleText>{text?.title}</TitleText>
                   <MainText>{text?.text}</MainText>
