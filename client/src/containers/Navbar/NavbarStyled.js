@@ -15,6 +15,7 @@ export const Container = styled.div`
   opacity: 0.9;
   text-align: center;
   transition: background 0.5s;
+  z-index: 1;
 `;
 
 export const LogoContainer = styled(NavLink)`
@@ -34,6 +35,7 @@ export const NavLinks = styled.div`
   font-size: 14px;
   letter-spacing: 0.4px;
   margin: auto;
+  align-items: center;
 `;
 
 export const Hamburger = styled.img`
@@ -72,53 +74,6 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
 
 export const NavLinkContainer = styled.div`
   display: flex;
-`;
-
-export const Dots = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  cursor: pointer;
-  :hover > div {
-    display: flex;
-  }
-  :hover > p {
-    background-color: ${props => props.theme.navGreen};
-  }
-`;
-
-export const Dot = styled.p`
-  width: 4px;
-  height: 4px;
-  margin: 1px 0;
-  border-radius: 50%;
-  background-color: white;
-`;
-
-export const DotsRoutesContainer = styled.div`
-  display: none;
-  flex-direction: column;
-  background-color: black;
-  margin-left: -160px;
-  width: 180px;
-  height: 110px;
-  position: absolute;
-  top: 60px;
-  padding: 8px 4px 4px;
-  border-radius: 3%;
-  :hover {
-    display: flex;
-  }
-`;
-
-export const DotsRoutes = styled.div`
-  display: flex;
-  margin: 6px 20px;
-  color: gray;
-  text-align: center;
-  :hover {
-    color: white;
-  }
 `;
 
 export const SendRequestContainer = styled.div`

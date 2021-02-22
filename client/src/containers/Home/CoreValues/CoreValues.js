@@ -29,9 +29,9 @@ const { navGreen, lightBlack, white } = theme;
 const CoreValues = ({ textsList }) => {
   const { texts, loading, error } = textsList;
 
-  const coreValueMain = texts.find(text => text.category === 'coreValuesMain');
-  const whoWeAre = texts.find(text => text.category === 'whoWeAre');
-  const coreValues = texts.filter(text => text.category === 'coreValues');
+  const coreValueMain = texts.find(text => text.section === 'coreValuesMain');
+  const whoWeAre = texts.find(text => text.section === 'whoWeAre');
+  const coreValues = texts.filter(text => text.section === 'coreValues');
   const imgList = [Core_Values_1, Core_Values_2, Core_Values_3]; // TODO will be removed
   const alt = 'image';
 
@@ -84,9 +84,9 @@ CoreValues.propTypes = {
   textsList: PropTypes.shape({
     texts: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        text: PropTypes.string,
+        section: PropTypes.string.isRequired,
         _id: PropTypes.string.isRequired
       })
     ).isRequired,

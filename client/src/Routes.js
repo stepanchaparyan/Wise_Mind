@@ -5,7 +5,6 @@ import Home from './containers/Home/Home';
 import AboutUs from './containers/AboutUs/AboutUs';
 import CarrierOpportunities from './containers/CarrierOpportunities/CarrierOpportunities';
 import ClientResources from './containers/ClientResources/ClientResources';
-import ContactUs from './containers/ContactUs/ContactUs';
 
 const App = () => {
   return (
@@ -14,7 +13,6 @@ const App = () => {
       <Route exact path="/about_us" component={AboutUs} />
       <Route exact path="/carrier_opportunities" component={CarrierOpportunities} />
       <Route exact path="/client_resources" component={ClientResources} />
-      <Route exact path="/contact_us" component={ContactUs} />
       <Route exact path="*" component={PageNotFound} />
     </Switch>
   );

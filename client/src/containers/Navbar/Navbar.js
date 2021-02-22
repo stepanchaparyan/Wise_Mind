@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Container,
   LogoContainer,
@@ -16,12 +17,21 @@ import {
 } from './NavbarStyled';
 import logo from '../../assets/logo.png';
 import { LINK } from '../../constants';
-import { navbarData } from './NavbarData';
+import { getTexts } from '../../redux/actions/textsActions';
 
 const alt = 'logo';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+
+  const dispatch = useDispatch();
+  const textsList = useSelector(state => state.texts);
+  const { texts, loading, error } = textsList;
+  const navbarData = texts.filter(text => text.section === 'navbar');
+
+  useEffect(() => {
+    dispatch(getTexts());
+  }, [dispatch]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -48,15 +58,6 @@ const Navbar = () => {
             </StyledLink>
           ))}
         </NavLinks>
-        <Dots>
-          <Dot></Dot>
-          <Dot></Dot>
-          <Dot></Dot>
-          <DotsRoutesContainer>
-            <DotsRoutes>Contact Us</DotsRoutes>
-            <DotsRoutes>Our Services</DotsRoutes>
-          </DotsRoutesContainer>
-        </Dots>
       </NavLinkContainer>
       <SendRequestContainer>
         <SendRequestButton to={LINK.TO.CONTACT_US}>

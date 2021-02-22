@@ -3,15 +3,16 @@ const mongoose = require('mongoose');
 const textSchema = mongoose.Schema({
   title: {
     type: String,
-    required: true,
   },
   text: {
     type: String,
-    required: true,
   },
-  category: {
+  section: {
     type: String,
     required: true,
+  },
+  url: {
+    type: String,
   },
 });
 
