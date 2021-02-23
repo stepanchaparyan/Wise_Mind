@@ -6,10 +6,6 @@ import {
   Logo,
   NavLinks,
   StyledLink,
-  Dots,
-  Dot,
-  DotsRoutesContainer,
-  DotsRoutes,
   SendRequestButton,
   NavLinkContainer,
   SendRequestContainer,
@@ -17,7 +13,8 @@ import {
 } from './NavbarStyled';
 import logo from '../../assets/logo.png';
 import { LINK } from '../../constants';
-import { getTexts } from '../../redux/actions/textsActions';
+import { getInfo } from '../../redux/actions/infoActions';
+import Loading from '../../components/Loading/Loading';
 
 const alt = 'logo';
 
@@ -25,12 +22,12 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
   const dispatch = useDispatch();
-  const textsList = useSelector(state => state.texts);
-  const { texts, loading, error } = textsList;
-  const navbarData = texts.filter(text => text.section === 'navbar');
+  const allInfo = useSelector(state => state.info);
+  const { info, loading } = allInfo;
+  const navbarData = info.filter(item => item.section === 'navbar');
 
   useEffect(() => {
-    dispatch(getTexts());
+    dispatch(getInfo());
   }, [dispatch]);
 
   useEffect(() => {
@@ -46,26 +43,30 @@ const Navbar = () => {
   };
 
   return (
-    <Container visible={visible}>
-      <LogoContainer to={LINK.TO.HOME}>
-        <Logo src={logo} alt={alt} />
-      </LogoContainer>
-      <NavLinkContainer>
-        <NavLinks>
-          {navbarData.map(({ title, url }) => (
-            <StyledLink exact key={title} to={url}>
-              {title.toUpperCase()}
-            </StyledLink>
-          ))}
-        </NavLinks>
-      </NavLinkContainer>
-      <SendRequestContainer>
-        <SendRequestButton to={LINK.TO.CONTACT_US}>
-          Send Request
-          <PaperPlaneIcon />
-        </SendRequestButton>
-      </SendRequestContainer>
-    </Container>
+    <>
+      {!loading && (
+        <Container visible={visible}>
+          <LogoContainer to={LINK.TO.HOME}>
+            <Logo src={logo} alt={alt} />
+          </LogoContainer>
+          <NavLinkContainer>
+            <NavLinks>
+              {navbarData.map(({ title, url }) => (
+                <StyledLink exact key={title} to={url}>
+                  {title.toUpperCase()}
+                </StyledLink>
+              ))}
+            </NavLinks>
+          </NavLinkContainer>
+          <SendRequestContainer>
+            <SendRequestButton to={LINK.TO.CONTACT_US}>
+              Send Request
+              <PaperPlaneIcon />
+            </SendRequestButton>
+          </SendRequestContainer>
+        </Container>
+      )}
+    </>
   );
 };
 

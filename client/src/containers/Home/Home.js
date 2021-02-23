@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTexts } from '../../redux/actions/textsActions';
+import { getInfo } from '../../redux/actions/infoActions';
 import Button from '../../components/Button/Button';
+import Loading from '../../components/Loading/Loading';
 import { Container, Module, SmallText, TitleText, ButtonsContainer, LongText } from './HomeStyled';
 import { LINK } from '../../constants';
 import theme from '../../styles/theme';
@@ -18,42 +19,49 @@ const Home = () => {
   }
 
   const dispatch = useDispatch();
-  const textsList = useSelector(state => state.texts);
+  const allInfo = useSelector(state => state.info);
+  const { info, loading, error } = allInfo;
 
   useEffect(() => {
-    dispatch(getTexts());
+    dispatch(getInfo());
   }, [dispatch]);
 
   return (
     <>
-      <Container alt={alt}>
-        <Module>
-          <SmallText>Mental health Services</SmallText>
-          <TitleText>Wise_Mind</TitleText>
-          <LongText>
-            Your solution to having more effective/productive mental fortitude for tomorrow.
-          </LongText>
-          <ButtonsContainer>
-            <Button
-              text="About Us"
-              textcolor={white}
-              texthovercolor={white}
-              backgroundcolor={lightBlue}
-              backgroundhovercolor={lightBlack}
-              to={LINK.TO.ABOUT_US}
-            />
-            <Button
-              text="Contact Us"
-              backgroundcolor="transparent"
-              backgroundhovercolor={white}
-              borderColor={white}
-              to={LINK.TO.CONTACT_US}
-            />
-          </ButtonsContainer>
-        </Module>
-      </Container>
-      <div onClick={handleOnClick} target="_blank"></div>
-      <CoreValues textsList={textsList}></CoreValues>
+      {loading ? (
+        <Loading></Loading>
+      ) : (
+        <>
+          <Container alt={alt}>
+            <Module>
+              <SmallText>Mental health Services</SmallText>
+              <TitleText>Wise_Mind</TitleText>
+              <LongText>
+                Your solution to having more effective/productive mental fortitude for tomorrow.
+              </LongText>
+              <ButtonsContainer>
+                <Button
+                  text="About Us"
+                  textcolor={white}
+                  texthovercolor={white}
+                  backgroundcolor={lightBlue}
+                  backgroundhovercolor={lightBlack}
+                  to={LINK.TO.ABOUT_US}
+                />
+                <Button
+                  text="Contact Us"
+                  backgroundcolor="transparent"
+                  backgroundhovercolor={white}
+                  borderColor={white}
+                  to={LINK.TO.CONTACT_US}
+                />
+              </ButtonsContainer>
+            </Module>
+          </Container>
+          <div onClick={handleOnClick} target="_blank"></div>
+          <CoreValues info={info}></CoreValues>
+        </>
+      )}
     </>
   );
 };

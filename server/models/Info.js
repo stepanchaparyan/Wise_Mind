@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const textSchema = mongoose.Schema({
+const infoSchema = mongoose.Schema({
   title: {
     type: String,
   },
@@ -16,6 +16,6 @@ const textSchema = mongoose.Schema({
   },
 });
 
-const Text = mongoose.model('text', textSchema);
+const Info = mongoose.model('info', infoSchema);
 
-module.exports = Text;
+module.exports = Info;
