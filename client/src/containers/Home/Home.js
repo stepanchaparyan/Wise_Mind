@@ -8,7 +8,7 @@ import { LINK } from '../../constants';
 import theme from '../../styles/theme';
 import CoreValues from './CoreValues/CoreValues';
 
-const { lightBlue, lightBlack, white } = theme;
+const { lightBlue, navGreen, lightBlack, white } = theme;
 const alt = 'mainImg';
 
 const Home = () => {
@@ -35,10 +35,7 @@ const Home = () => {
           <Container alt={alt}>
             <Module>
               <SmallText>Mental health Services</SmallText>
-              <TitleText>Wise_Mind</TitleText>
-              <LongText>
-                Your solution to having more effective/productive mental fortitude for tomorrow.
-              </LongText>
+              <TitleText>Wise Mind</TitleText>
               <ButtonsContainer>
                 <Button
                   text="About Us"
@@ -50,12 +47,17 @@ const Home = () => {
                 />
                 <Button
                   text="Contact Us"
-                  backgroundcolor="transparent"
-                  backgroundhovercolor={white}
+                  textcolor={white}
+                  texthovercolor={white}
+                  backgroundcolor={navGreen}
+                  backgroundhovercolor={lightBlack}
                   borderColor={white}
                   to={LINK.TO.CONTACT_US}
                 />
               </ButtonsContainer>
+              <LongText>
+                Your solution to having more effective/productive mental fortitude for tomorrow.
+              </LongText>
             </Module>
           </Container>
           <div onClick={handleOnClick} target="_blank"></div>

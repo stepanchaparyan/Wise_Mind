@@ -11,7 +11,8 @@ export const Container = styled.div`
   position: fixed;
   height: 60px;
   width: 100%;
-  background: ${({ visible }) => (visible ? 'gray' : 'transparent')};
+  background: ${({ visible }) =>
+    visible ? 'slategray' : 'repeating-linear-gradient(180deg, black, transparent 100px)'};
   opacity: 0.9;
   text-align: center;
   transition: background 0.5s;
@@ -56,8 +57,9 @@ const activeClassName = 'active';
 export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   display: flex;
   text-decoration: none;
-  color: white;
+  color: ghostwhite;
   margin: 10px 20px;
+  font-weight: bold;
   ${tabletUp`
     margin: 0 20px;
     align-self: auto;
@@ -78,11 +80,12 @@ export const NavLinkContainer = styled.div`
 
 export const SendRequestContainer = styled.div`
   padding-right: 70px;
+  font-weight: bold;
 `;
 
-export const SendRequestButton = styled(NavLink)`
+export const SendRequestButton = styled.a`
   display: flex;
-  padding: 16px 34px;
+  padding: 10px 20px;
   border: solid 1px white;
   background: transparent;
   text-align: center;

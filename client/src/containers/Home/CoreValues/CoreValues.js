@@ -45,7 +45,7 @@ const CoreValues = ({ info }) => {
           {coreValues.map((text, i) => (
             <Container key={text?.title}>
               <Overlay>
-                <Dots>TODO</Dots>
+                {/* <Dots>TODO</Dots> */}
                 <Image src={imgList[i]} alt={alt}></Image>
               </Overlay>
               <TitleText>{text?.title}</TitleText>

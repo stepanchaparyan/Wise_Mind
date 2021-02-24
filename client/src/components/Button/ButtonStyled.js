@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { tabletUp, desktopUp } from '../../styles/mediaQueries/mixins';
 
 export const ButtonStyled = styled(Link)`
   align-items: center;
-  padding: 17px 54px;
-  margin: auto 40px;
+  padding: 10px 24px;
+  margin: auto 20px;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 3px;
   font-size: 12px;
   letter-spacing: 1px;
+  white-space: nowrap;
   border: ${({ bordercolor }) => (bordercolor ? `1px solid ${bordercolor}` : 0)};
   color: ${({ textcolor }) => textcolor};
   background-color: ${({ backgroundcolor }) => backgroundcolor};
@@ -19,4 +21,12 @@ export const ButtonStyled = styled(Link)`
     color: ${({ texthovercolor }) => texthovercolor};
     border: ${({ borderhovercolor }) => borderhovercolor && `1px solid ${borderhovercolor}`};
   }
+  ${tabletUp`
+    padding: 14px 40px;
+    margin: auto 30px;
+  `};
+  ${desktopUp`
+    padding: 17px 54px;
+    margin: auto 40px;
+  `};
 `;

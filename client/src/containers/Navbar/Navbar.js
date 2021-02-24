@@ -59,7 +59,10 @@ const Navbar = () => {
             </NavLinks>
           </NavLinkContainer>
           <SendRequestContainer>
-            <SendRequestButton to={LINK.TO.CONTACT_US}>
+            <SendRequestButton
+              target="_blank"
+              href="https://www.therapyportal.com/p/wisemindprocessinc/"
+            >
               Send Request
               <PaperPlaneIcon />
             </SendRequestButton>

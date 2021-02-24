@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import MainImage from '../../assets/bg.jpg';
+import { desktopUp } from '../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   background-image: url(${MainImage});
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  ${desktopUp`
+    height: 100vh;
+  `};
 `;
 
 export const Module = styled.div`
@@ -18,15 +22,19 @@ export const Module = styled.div`
 `;
 
 export const SmallText = styled.div`
-  margin-top: 170px;
+  margin-top: 80px;
   padding: 16px 0px;
   font-family: 'Montserrat';
+  font-weight: bold;
   color: ${props => props.theme.white};
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
+  ${desktopUp`
+    margin-top: 110px;
+  `};
 `;
 
 export const TitleText = styled.div`
@@ -42,14 +50,21 @@ export const TitleText = styled.div`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  margin-top: 64px;
+  margin-top: 30px;
+  ${desktopUp`
+    margin-top: 120px;
+  `};
 `;
 
 export const LongText = styled.div`
   color: ${props => props.theme.white};
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 2px;
-  margin-top: 16px;
+  margin: 30px 0;
+  ${desktopUp`
+    margin-top: 100px;
+  `};
 `;

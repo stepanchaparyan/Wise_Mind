@@ -7,7 +7,7 @@ const tabletSizeMin = `(min-width: ${size.tabletMin})`;
 const desktopSizeMin = `(min-width: ${size.desktopMin})`;
 const desktopLargeSizeMin = `(min-width: ${size.desktopLargeMin})`;
 
-export const mobile = (...args) => css` @media ${mobileSizeMin} and @media ${mobileSizeMax} {
+export const mobile = (...args) => css` @media ${mobileSizeMax} {
  ${css(...args)};
     } 
 }`;

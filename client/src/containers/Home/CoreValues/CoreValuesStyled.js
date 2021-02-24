@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 import CoreValueBGImage from '../../../assets/bg-core-values.jpg';
 // import Core_Values_1 from '../../../assets/core_values_1.jpg';
+import { desktopUp } from '../../../styles/mediaQueries/mixins';
 
 export const CoreValesContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  ${desktopUp`
+    flex-direction: row;
+  `};
 `;
 
 export const LeftPart = styled.div`
   display: flex;
   flex-direction: column;
-  width: 23%;
   padding: 24px;
   font-size: 14px;
   letter-spacing: 1.4px;
@@ -19,6 +23,9 @@ export const LeftPart = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  ${desktopUp`
+    width: 23%;
+  `};
 `;
 
 export const Title = styled.div`
@@ -50,23 +57,34 @@ export const ButtonStyled = styled.button`
 export const RightPart = styled.div`
   display: flex;
   flex-direction: column;
-  width: 77%;
+  width: 100%;
+  ${desktopUp`
+    width: 77%;
+  `};
 `;
 
 export const ThreePictures = styled.div`
   display: flex;
   color: green;
   flex-wrap: wrap;
+  flex-direction: column;
+  ${desktopUp`
+    flex-direction: row;
+  `};
 `;
 
 export const Container = styled.div`
   display: flex;
-  width: 33%;
+  width: 100%;
   flex-direction: column;
   color: ${props => props.theme.veryDarkGray};
   font-size: 14px;
   letter-spacing: 1.4px;
   line-height: 1.8;
+  flex-direction: column;
+  ${desktopUp`
+    width: 33%;
+  `};
 `;
 
 // export const Image = styled.div`
@@ -85,7 +103,7 @@ export const Image = styled.img`
 
 export const Overlay = styled.div`
   max-width: 100%;
-  height: 316px;
+  height: auto;
   position: relative;
   cursor: pointer;
   :after {
