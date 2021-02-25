@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Container,
   LogoContainer,
   Logo,
   NavLinks,
   StyledLink,
-  Dots,
-  Dot,
-  DotsRoutesContainer,
-  DotsRoutes,
   SendRequestButton,
   NavLinkContainer,
   SendRequestContainer,
@@ -16,12 +13,22 @@ import {
 } from './NavbarStyled';
 import logo from '../../assets/logo.png';
 import { LINK } from '../../constants';
-import { navbarData } from './NavbarData';
+import { getInfo } from '../../redux/actions/infoActions';
+import Loading from '../../components/Loading/Loading';
 
 const alt = 'logo';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+
+  const dispatch = useDispatch();
+  const allInfo = useSelector(state => state.info);
+  const { info, loading } = allInfo;
+  const navbarData = info.filter(item => item.section === 'navbar');
+
+  useEffect(() => {
+    dispatch(getInfo());
+  }, [dispatch]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -36,35 +43,33 @@ const Navbar = () => {
   };
 
   return (
-    <Container visible={visible}>
-      <LogoContainer to={LINK.TO.HOME}>
-        <Logo src={logo} alt={alt} />
-      </LogoContainer>
-      <NavLinkContainer>
-        <NavLinks>
-          {navbarData.map(({ title, url }) => (
-            <StyledLink exact key={title} to={url}>
-              {title.toUpperCase()}
-            </StyledLink>
-          ))}
-        </NavLinks>
-        <Dots>
-          <Dot></Dot>
-          <Dot></Dot>
-          <Dot></Dot>
-          <DotsRoutesContainer>
-            <DotsRoutes>Contact Us</DotsRoutes>
-            <DotsRoutes>Our Services</DotsRoutes>
-          </DotsRoutesContainer>
-        </Dots>
-      </NavLinkContainer>
-      <SendRequestContainer>
-        <SendRequestButton to={LINK.TO.CONTACT_US}>
-          Send Request
-          <PaperPlaneIcon />
-        </SendRequestButton>
-      </SendRequestContainer>
-    </Container>
+    <>
+      {!loading && (
+        <Container visible={visible}>
+          <LogoContainer to={LINK.TO.HOME}>
+            <Logo src={logo} alt={alt} />
+          </LogoContainer>
+          <NavLinkContainer>
+            <NavLinks>
+              {navbarData.map(({ title, url }) => (
+                <StyledLink exact key={title} to={url}>
+                  {title.toUpperCase()}
+                </StyledLink>
+              ))}
+            </NavLinks>
+          </NavLinkContainer>
+          <SendRequestContainer>
+            <SendRequestButton
+              target="_blank"
+              href="https://www.therapyportal.com/p/wisemindprocessinc/"
+            >
+              Send Request
+              <PaperPlaneIcon />
+            </SendRequestButton>
+          </SendRequestContainer>
+        </Container>
+      )}
+    </>
   );
 };
 

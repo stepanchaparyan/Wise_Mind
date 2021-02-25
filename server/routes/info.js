@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Text = require('../models/Text');
+const Info = require('../models/Info');
 
-// get all products
+// get all data
 router.get('/', async (req, res) => {
   try {
-    const texts = await Text.find({});
-    res.json(texts);
+    const info = await Info.find({});
+    res.json(info);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server Error' });

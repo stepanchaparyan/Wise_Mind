@@ -3,5 +3,5 @@ import { serverUrl } from '../../environment';
 const API = 'api';
 
 export const URL = {
-  TEXTS: `${serverUrl}/${API}/texts`
+  INFO: `${serverUrl}/${API}/info`
 };
