@@ -22,7 +22,10 @@ export const Container = styled.div`
 export const LogoContainer = styled(NavLink)`
   margin: 0;
   padding: 0;
-  padding-left: 100px;
+  padding-left: 16px;
+  ${tabletUp`
+    padding-left: 100px;
+  `};
 `;
 
 export const Logo = styled.img`
@@ -37,18 +40,9 @@ export const NavLinks = styled.div`
   letter-spacing: 0.4px;
   margin: auto;
   align-items: center;
-`;
-
-export const Hamburger = styled.img`
-  display: flex;
   flex-direction: column;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  right: 12px;
-  top: 12px;
   ${tabletUp`
-    display: none;
+    flex-direction: row;
   `};
 `;
 
@@ -75,12 +69,38 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
 `;
 
 export const NavLinkContainer = styled.div`
-  display: flex;
+  display: ${({ open }) => (open ? 'flex' : 'none')};
+  flex-direction: column;
+  background: ${props => props.theme.black};
+  color: white;
+  position: absolute;
+  top: 56px;
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+  ${tabletUp`
+    display: flex;
+    background: none;
+    position: relative;
+    top: 0;
+  `};
 `;
 
 export const SendRequestContainer = styled.div`
-  padding-right: 70px;
   font-weight: bold;
+  display: ${({ open }) => (open ? 'flex' : 'none')};
+  background: ${props => props.theme.black};
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  ${tabletUp`
+    display: flex;
+    position: relative;
+    background: none;
+    padding-right: 30px;
+    top: 2px;
+  `};
 `;
 
 export const SendRequestButton = styled.a`
@@ -94,6 +114,7 @@ export const SendRequestButton = styled.a`
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
   :hover {
     background: white;
     color: gray;
@@ -109,4 +130,17 @@ export const PaperPlaneIcon = styled.div`
   padding: 2px 0 0 6px;
   margin-left: 10px;
   background-image: url(${PaperPlaneWhite});
+`;
+
+export const Hamburger = styled.img`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: 14px;
+  top: 14px;
+  ${tabletUp`
+    display: none;
+  `};
 `;

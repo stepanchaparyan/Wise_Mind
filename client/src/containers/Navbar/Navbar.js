@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Container,
@@ -9,17 +9,25 @@ import {
   SendRequestButton,
   NavLinkContainer,
   SendRequestContainer,
-  PaperPlaneIcon
+  PaperPlaneIcon,
+  Hamburger
 } from './NavbarStyled';
 import logo from '../../assets/logo.png';
+import hamburger from '../../assets/hamburger.png';
 import { LINK } from '../../constants';
+import { THERAPY_PORTAL } from '../../constants/url';
 import { getInfo } from '../../redux/actions/infoActions';
 import Loading from '../../components/Loading/Loading';
+import { useOnClickOutside } from '../../hooks/clickOutSide';
 
 const alt = 'logo';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+
+  useOnClickOutside(node, () => setOpen(false));
 
   const dispatch = useDispatch();
   const allInfo = useSelector(state => state.info);
@@ -42,14 +50,18 @@ const Navbar = () => {
     }
   };
 
+  const toggle = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
       {!loading && (
-        <Container visible={visible}>
+        <Container ref={node} visible={visible}>
           <LogoContainer to={LINK.TO.HOME}>
             <Logo src={logo} alt={alt} />
           </LogoContainer>
-          <NavLinkContainer>
+          <NavLinkContainer open={open}>
             <NavLinks>
               {navbarData.map(({ title, url }) => (
                 <StyledLink exact key={title} to={url}>
@@ -58,15 +70,13 @@ const Navbar = () => {
               ))}
             </NavLinks>
           </NavLinkContainer>
-          <SendRequestContainer>
-            <SendRequestButton
-              target="_blank"
-              href="https://www.therapyportal.com/p/wisemindprocessinc/"
-            >
+          <SendRequestContainer open={open}>
+            <SendRequestButton target="_blank" href={THERAPY_PORTAL}>
               Send Request
               <PaperPlaneIcon />
             </SendRequestButton>
           </SendRequestContainer>
+          <Hamburger src={hamburger} onClick={toggle}></Hamburger>
         </Container>
       )}
     </>
