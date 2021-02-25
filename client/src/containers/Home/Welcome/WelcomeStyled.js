@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import MainImage from '../../assets/bg.jpg';
-import { desktopUp } from '../../styles/mediaQueries/mixins';
+import MainImage from '../../../assets/bg.jpg';
+import { desktopUp } from '../../../styles/mediaQueries/mixins';
 
 export const Container = styled.div`
   background-image: url(${MainImage});
