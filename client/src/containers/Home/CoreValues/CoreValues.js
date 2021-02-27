@@ -14,8 +14,7 @@ import {
   MainText,
   WhoWeAreTitleText,
   WhoWeAreMainText,
-  Overlay,
-  Dots
+  Overlay
 } from './CoreValuesStyled';
 import Button from '../../../components/Button/Button';
 import theme from '../../../styles/theme';
@@ -26,10 +25,7 @@ import Core_Values_3 from '../../../assets/core_values_3.jpg';
 
 const { navGreen, lightBlack, white } = theme;
 
-const CoreValues = ({ info }) => {
-  const coreValueMain = info.find(item => item.section === 'coreValuesMain');
-  const whoWeAre = info.find(item => item.section === 'whoWeAre');
-  const coreValues = info.filter(item => item.section === 'coreValues');
+const CoreValues = ({ coreValueMain, coreValues, whoWeAre }) => {
   const imgList = [Core_Values_1, Core_Values_2, Core_Values_3]; // TODO will be removed
   const alt = 'image';
 
@@ -45,7 +41,6 @@ const CoreValues = ({ info }) => {
           {coreValues.map((text, i) => (
             <Container key={text?.title}>
               <Overlay>
-                {/* <Dots>TODO</Dots> */}
                 <Image src={imgList[i]} alt={alt}></Image>
               </Overlay>
               <TitleText>{text?.title}</TitleText>
@@ -71,14 +66,26 @@ const CoreValues = ({ info }) => {
 };
 
 CoreValues.propTypes = {
-  info: PropTypes.arrayOf(
+  coreValueMain: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  }),
+  coreValues: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
       text: PropTypes.string,
       section: PropTypes.string.isRequired,
       _id: PropTypes.string.isRequired
     })
-  ).isRequired
+  ),
+  whoWeAre: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  })
 };
 
 export default CoreValues;

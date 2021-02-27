@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import CoreValueBGImage from '../../../assets/bg-core-values.jpg';
-// import Core_Values_1 from '../../../assets/core_values_1.jpg';
-import { desktopUp } from '../../../styles/mediaQueries/mixins';
+import { tabletUp } from '../../../styles/mediaQueries/mixins';
 
 export const CoreValesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  ${desktopUp`
+  ${tabletUp`
     flex-direction: row;
   `};
 `;
@@ -23,7 +22,7 @@ export const LeftPart = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  ${desktopUp`
+  ${tabletUp`
     width: 23%;
   `};
 `;
@@ -58,7 +57,7 @@ export const RightPart = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  ${desktopUp`
+  ${tabletUp`
     width: 77%;
   `};
 `;
@@ -68,7 +67,7 @@ export const ThreePictures = styled.div`
   color: green;
   flex-wrap: wrap;
   flex-direction: column;
-  ${desktopUp`
+  ${tabletUp`
     flex-direction: row;
   `};
 `;
@@ -82,7 +81,7 @@ export const Container = styled.div`
   letter-spacing: 1.4px;
   line-height: 1.8;
   flex-direction: column;
-  ${desktopUp`
+  ${tabletUp`
     width: 33%;
   `};
 `;
