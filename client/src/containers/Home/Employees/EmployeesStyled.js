@@ -25,7 +25,8 @@ export const Employee = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  ${desktopUp`
+  align-items: center;
+  ${tabletUp`
     flex-direction: row;
   `};
 `;
@@ -158,7 +159,7 @@ export const MediaIcon = styled.div`
   height: 16px;
 `;
 
-export const IconContainer = styled.div.attrs({ as: 'a'})`
+export const IconContainer = styled.div.attrs({ as: 'a' })`
   width: 16px;
   min-width: 16px;
   height: auto;
