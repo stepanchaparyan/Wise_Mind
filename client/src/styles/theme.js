@@ -6,6 +6,7 @@ const theme = {
   midLightBlack: '#3a3a3a',
   lightBlack: '#24282b',
   midLightGray: '#e0e0e0',
+  moreDarkGray: '#8a8a8a',
   lightGray: '#F5F5F5',
   veryLightGray: '#f8f8f8',
   darkgray: 'darkgray',

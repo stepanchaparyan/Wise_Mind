@@ -3,5 +3,5 @@ export const size = {
   mobileMax: '767px',
   tabletMin: '768px',
   desktopMin: '1024px',
-  desktopLargeMin: '1200px'
+  desktopLargeMin: '1300px'
 };

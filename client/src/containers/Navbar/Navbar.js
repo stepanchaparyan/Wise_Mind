@@ -15,7 +15,7 @@ import {
 import logo from '../../assets/logo.png';
 import hamburger from '../../assets/hamburger.png';
 import { LINK } from '../../constants';
-import { THERAPY_PORTAL } from '../../constants/url';
+import { THERAPY_PORTAL, BLANK } from '../../constants/url';
 import { getInfo } from '../../redux/actions/infoActions';
 import Loading from '../../components/Loading/Loading';
 import { useOnClickOutside } from '../../hooks/clickOutSide';
@@ -71,7 +71,7 @@ const Navbar = () => {
             </NavLinks>
           </NavLinkContainer>
           <SendRequestContainer open={open}>
-            <SendRequestButton target="_blank" href={THERAPY_PORTAL}>
+            <SendRequestButton target={BLANK} href={THERAPY_PORTAL}>
               Send Request
               <PaperPlaneIcon />
             </SendRequestButton>
