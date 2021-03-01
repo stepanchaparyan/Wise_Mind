@@ -5,6 +5,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CssnanoPlugin = require('cssnano-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -12,12 +15,19 @@ const isProd = !isDev;
 const optimization = () => {
   const config = {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      minSize: 10000,
+      maxSize: 250000
     }
   };
 
   if (isProd) {
-    config.minimizer = [new OptimizeCssAssetWebpackPlugin(), new TerserWebpackPlugin()];
+    config.minimizer = [
+      new OptimizeCssAssetWebpackPlugin(),
+      new TerserWebpackPlugin(),
+      new UglifyJsPlugin(),
+      new CssnanoPlugin()
+    ];
   }
   return config;
 };
@@ -87,7 +97,8 @@ const plugins = () => {
     ]),
     new MiniCssExtractPlugin({
       filename: filename('css')
-    })
+    }),
+    new DashboardPlugin()
   ];
 
   return base;
@@ -115,6 +126,11 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : '',
   plugins: plugins(),
+  performance: {
+    hints: isProd ? 'warning' : false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   module: {
     rules: [
       {
