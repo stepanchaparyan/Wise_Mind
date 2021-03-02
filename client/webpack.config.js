@@ -120,7 +120,7 @@ module.exports = {
   optimization: optimization(),
   devServer: {
     port: 3000,
-    hot: isDev,
+    hot: true,
     writeToDisk: true,
     historyApiFallback: true
   },
@@ -147,7 +147,30 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/,
-        use: ['file-loader']
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true
+              },
+              optipng: {
+                enabled: false
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false
+              },
+              webp: {
+                quality: 96
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,

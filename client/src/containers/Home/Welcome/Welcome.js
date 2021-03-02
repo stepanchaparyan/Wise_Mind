@@ -12,12 +12,11 @@ import { LINK } from '../../../constants';
 import theme from '../../../styles/theme';
 
 const { lightBlue, navGreen, lightBlack, white } = theme;
-const alt = 'mainImg';
 
 const Welcome = () => {
   return (
     <>
-      <Container alt={alt}>
+      <Container>
         <Module>
           <SmallText>Mental health Services</SmallText>
           <TitleText>Wise Mind</TitleText>
