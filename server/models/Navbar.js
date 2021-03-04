@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const infoSchema = mongoose.Schema({
+const navbarSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -16,6 +16,10 @@ const infoSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  link: {
+    type: String,
+    required: true,
+  },
   section: {
     type: String,
     required: true,
@@ -25,6 +29,6 @@ const infoSchema = mongoose.Schema({
   },
 });
 
-const Info = mongoose.model('info', infoSchema);
+const Navbar = mongoose.model('navbar', navbarSchema);
 
-module.exports = Info;
+module.exports = Navbar;

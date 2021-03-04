@@ -57,7 +57,7 @@ const CoreValues = ({ coreValueMain, coreValues, whoWeAre }) => {
             texthovercolor={white}
             backgroundcolor={navGreen}
             backgroundhovercolor={lightBlack}
-            to={LINK.TO.ABOUT_US}
+            to={LINK.TO.ABOUT}
           />
         </WhoWeAre>
       </RightPart>

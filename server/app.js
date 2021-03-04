@@ -18,7 +18,7 @@ app.use(fileUpload());
 app.use(express.json({ extended: true }));
 
 // API routes
-app.use('/api/info', require('./routes/info'));
+app.use('/api', require('./routes/allData'));
 
 // use static files
 app.use('/', express.static(path.join('..', 'client', 'build')));

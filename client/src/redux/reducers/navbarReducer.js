@@ -1,18 +1,18 @@
 import * as actionTypes from '../constants/constants';
 
-export const infoReducer = (state = { info: [], loading: false }, { type, payload }) => {
+export const navbarReducer = (state = { navbar: [], loading: false }, { type, payload }) => {
   switch (type) {
-    case actionTypes.GET_INFO_REQUEST:
+    case actionTypes.GET_NAVBAR_REQUEST:
       return {
         ...state,
         loading: true
       };
-    case actionTypes.GET_INFO_SUCCESS:
+    case actionTypes.GET_NAVBAR_SUCCESS:
       return {
-        info: payload,
+        navbar: payload,
         loading: false
       };
-    case actionTypes.GET_INFO_FAIL:
+    case actionTypes.GET_NAVBAR_FAIL:
       return {
         loading: false,
         error: payload

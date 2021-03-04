@@ -15,8 +15,8 @@ import {
 import logo from '../../assets/logo.png';
 import hamburger from '../../assets/hamburger.png';
 import { LINK } from '../../constants';
-import { THERAPY_PORTAL, BLANK } from '../../constants/url';
-import { getInfo } from '../../redux/actions/infoActions';
+import { BLANK } from '../../constants/url';
+import { getNavbar } from '../../redux/actions/navbarActions';
 import Loading from '../../components/Loading/Loading';
 import { useOnClickOutside } from '../../hooks/clickOutSide';
 
@@ -26,16 +26,17 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState(false);
   const node = useRef();
+  const sendRequestText = 'Send Request';
 
   useOnClickOutside(node, () => setOpen(false));
 
   const dispatch = useDispatch();
-  const allInfo = useSelector(state => state.info);
-  const { info, loading } = allInfo;
-  const navbarData = info.filter(item => item.section === 'navbar');
+  const { navbar, loading } = useSelector(state => state.navbar);
+  const navbarMenus = navbar.filter(item => item.title !== sendRequestText);
+  const sentRequest = navbar.find(item => item.title === sendRequestText);
 
   useEffect(() => {
-    dispatch(getInfo());
+    dispatch(getNavbar());
   }, [dispatch]);
 
   useEffect(() => {
@@ -63,16 +64,16 @@ const Navbar = () => {
           </LogoContainer>
           <NavLinkContainer open={open}>
             <NavLinks>
-              {navbarData.map(({ title, url }) => (
-                <StyledLink exact key={title} to={url}>
+              {navbarMenus.map(({ title, link }) => (
+                <StyledLink exact key={title} to={link}>
                   {title.toUpperCase()}
                 </StyledLink>
               ))}
             </NavLinks>
           </NavLinkContainer>
           <SendRequestContainer open={open}>
-            <SendRequestButton target={BLANK} href={THERAPY_PORTAL}>
-              Send Request
+            <SendRequestButton target={BLANK} href={sentRequest?.link}>
+              {sentRequest?.title}
               <PaperPlaneIcon />
             </SendRequestButton>
           </SendRequestContainer>

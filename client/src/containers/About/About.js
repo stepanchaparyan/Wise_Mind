@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container, Module, WelcomeText, LongText, LinkStyled } from './AboutUsStyled';
+import { Container, Module, WelcomeText, LongText, LinkStyled } from './AboutStyled';
 import { LINK } from '../../constants';
 
-const AboutUs = () => {
+const About = () => {
   return (
     <>
       <Container>
         <Module>
-          <WelcomeText>{'AboutUs'}</WelcomeText>
-          <LongText>{'AboutUs'}</LongText>
+          <WelcomeText>{'About Us'}</WelcomeText>
+          <LongText>{'About Us'}</LongText>
           <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
         </Module>
       </Container>
@@ -16,4 +16,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;

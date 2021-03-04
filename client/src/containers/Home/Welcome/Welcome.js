@@ -27,7 +27,7 @@ const Welcome = () => {
               texthovercolor={white}
               backgroundcolor={lightBlue}
               backgroundhovercolor={lightBlack}
-              to={LINK.TO.ABOUT_US}
+              to={LINK.TO.ABOUT}
             />
             <Button
               text="Contact Us"
