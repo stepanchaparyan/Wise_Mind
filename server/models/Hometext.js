@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const infoSchema = mongoose.Schema({
+const hometextSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -23,8 +23,12 @@ const infoSchema = mongoose.Schema({
   parent_section: {
     type: String,
   },
+  text: {
+    type: String,
+    required: true,
+  },
 });
 
-const Info = mongoose.model('info', infoSchema);
+const Hometext = mongoose.model('hometext', hometextSchema);
 
-module.exports = Info;
+module.exports = Hometext;

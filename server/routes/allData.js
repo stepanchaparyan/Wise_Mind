@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Info = require('../models/Info');
-const Navbar = require('../models/Info');
+const Navbar = require('../models/Navbar');
+const Hometext = require('../models/Hometext');
 
 // get all data
-router.get('/', async (req, res) => {
+router.get('/en/home/texts', async (req, res) => {
   try {
-    const info = await Info.find({});
-    res.json(info);
+    const hometext = await Hometext.find({});
+    res.json(hometext);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server Error' });
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 // get navbar data
 router.get('/en/home/menus', async (req, res) => {
   try {
-    const navbar = await Navbar.find({ section: 'navbar' });
+    const navbar = await Navbar.find({});
     res.json(navbar);
   } catch (error) {
     console.error(error);

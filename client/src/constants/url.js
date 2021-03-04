@@ -3,7 +3,7 @@ import { serverUrl } from '../../environment';
 const API = 'api';
 
 export const URL = {
-  INFO: `${serverUrl}/${API}`,
+  HOME_TEXTS: `${serverUrl}/${API}/en/home/texts`,
   NAVBAR: `${serverUrl}/${API}/en/home/menus`
 };
 
