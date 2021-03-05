@@ -5,7 +5,7 @@ import { tabletUp, desktopUp } from '../../styles/mediaQueries/mixins';
 export const ButtonStyled = styled(Link)`
   align-items: center;
   padding: 10px 24px;
-  margin: auto 20px;
+  margin: auto 14px;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 3px;

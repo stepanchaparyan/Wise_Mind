@@ -43,7 +43,6 @@ export const TitleText = styled.div`
   font-size: 55px;
   line-height: 1.2;
   font-weight: 600;
-  text-decoration: none;
   text-align: center;
   text-transform: uppercase;
 `;

@@ -3,6 +3,7 @@ const theme = {
   blue: 'blue',
   orange: 'orange',
   black: 'black',
+  lightgray: 'lightgray',
   midLightBlack: '#3a3a3a',
   lightBlack: '#24282b',
   midLightGray: '#e0e0e0',
@@ -13,7 +14,8 @@ const theme = {
   veryDarkGray: '#717477',
   navGreen: '#71b347',
   white: '#ffffff',
-  lightBlue: '#1996cd'
+  lightBlue: '#1996cd',
+  lighterBlue: '#2398c9'
 };
 
 export default theme;

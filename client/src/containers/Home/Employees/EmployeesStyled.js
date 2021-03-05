@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { desktopUp, tabletUp, desktopLargeUp } from '../../../styles/mediaQueries/mixins';
+import { mobile, desktopUp, tabletUp, desktopLargeUp } from '../../../styles/mediaQueries/mixins';
 import Carousel from 'react-elastic-carousel';
 import Facebook from '../../../assets/facebook.png';
 import Twitter from '../../../assets/twitter.png';
@@ -69,9 +69,9 @@ export const TitleText = styled.div`
   display: flex;
   padding: 20px 40px;
   margin: auto;
-  font-size: 30px;
-  font-family: serif;
-  letter-spacing: 1.4px;
+  font-size: 24px;
+  font-family: 'Raleway';
+  letter-spacing: 1.2px;
   text-align: center;
   color: ${props => props.theme.midLightBlack};
   :hover {
@@ -79,12 +79,11 @@ export const TitleText = styled.div`
   }
   ${desktopUp`
     padding: 20px 0;
-    font-size: 48px;
+    font-size: 36px;
   `};
 `;
 
 export const NameText = styled.div`
-  display: flex;
   margin: auto;
   font-size: 18px;
   font-weight: bold;
@@ -96,8 +95,7 @@ export const NameText = styled.div`
 `;
 
 export const MainText = styled.div`
-  display: flex;
-  padding: 4px 24px 24px 24px;
+  padding: 4px 0 24px 0;
   color: ${props => props.theme.moreDarkGray};
   line-height: 1.4;
 `;
@@ -129,6 +127,10 @@ export const Overlay = styled.div`
 `;
 
 export const Image = styled.img`
+  ${mobile`
+    width: 270px;
+    min-width: 270px;
+  `};
   width: 300px;
   min-width: 300px;
   height: auto;
