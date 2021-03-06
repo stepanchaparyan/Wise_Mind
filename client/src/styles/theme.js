@@ -6,6 +6,8 @@ const theme = {
   lightgray: 'lightgray',
   midLightBlack: '#3a3a3a',
   lightBlack: '#24282b',
+  footerBlack: '#202426',
+  footerTextColor: '#9e9f9f',
   midLightGray: '#e0e0e0',
   moreDarkGray: '#8a8a8a',
   lightGray: '#F5F5F5',

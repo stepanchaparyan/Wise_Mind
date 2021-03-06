@@ -10,8 +10,9 @@ export const Container = styled.div`
   height: 270px;
   padding: 40px 50px 30px 50px;
   ${tabletUp`
-    height: 125px;
+    height: 160px;
     flex-direction: row;
+    padding: 40px 100px 30px 100px;
   `};
   ${desktopUp`
     height: 100px;

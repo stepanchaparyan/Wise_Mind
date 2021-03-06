@@ -3,10 +3,10 @@ import { mobile, desktopUp, tabletUp, desktopLargeUp } from '../../../styles/med
 import Carousel from 'react-elastic-carousel';
 import Facebook from '../../../assets/facebook.png';
 import Twitter from '../../../assets/twitter.png';
-import Iinstagram from '../../../assets/instagram.png';
+import Instagram from '../../../assets/instagram.png';
 import FacebookBlue from '../../../assets/facebook-blue.png';
 import TwitterBlue from '../../../assets/twitter-blue.png';
-import IinstagramBlue from '../../../assets/instagram-blue.png';
+import InstagramBlue from '../../../assets/instagram-blue.png';
 
 export const EmployeesContainer = styled.div`
   display: flex;
@@ -153,7 +153,7 @@ export const MediaIcon = styled.div`
       ? `url(${Facebook})`
       : props.type === 'twitter'
       ? `url(${Twitter})`
-      : `url(${Iinstagram})`};
+      : `url(${Instagram})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,6 +178,6 @@ export const IconContainer = styled.div.attrs({ as: 'a' })`
         ? `url(${FacebookBlue})`
         : props.type === 'twitter'
         ? `url(${TwitterBlue})`
-        : `url(${IinstagramBlue})`};
+        : `url(${InstagramBlue})`};
   }
 `;
