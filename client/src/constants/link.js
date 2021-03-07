@@ -4,6 +4,8 @@ export const LINK = {
     ABOUT: '/about',
     CARRIER_OPPORTUNITIES: '/carrier_opportunities',
     CLIENT_RESOURCES: '/client_resources',
-    CONTACT_US: '/contact_us'
+    CONTACT_US: '/contact_us',
+    TERMS_CONDITIONS: '/terms_conditions',
+    PRIVACY_POLICY: '/privacy_policy'
   }
 };

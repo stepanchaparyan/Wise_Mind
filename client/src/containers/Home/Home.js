@@ -6,7 +6,6 @@ import Welcome from './Welcome/Welcome';
 import CoreValues from './CoreValues/CoreValues';
 import Treatments from './Treatments/Treatments';
 import Employees from './Employees/Employees';
-import ContactUs from './ContactUs/ContactUs';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ const Home = () => {
   const whoWeAre = homeTexts.find(item => item.section === 'whoWeAre');
   const employees = homeTexts.filter(item => item.section === 'employees');
   const employeesTitleText = homeTexts.find(item => item.section === 'employeesTitleText');
-  const contactUsTexts = homeTexts.find(item => item.section === 'contact_us');
 
   useEffect(() => {
     dispatch(getHomeTexts());
@@ -37,7 +35,6 @@ const Home = () => {
           ></CoreValues>
           <Treatments treatments={treatments}></Treatments>
           <Employees titleText={employeesTitleText} employees={employees}></Employees>
-          <ContactUs texts={contactUsTexts}></ContactUs>
         </>
       )}
     </>

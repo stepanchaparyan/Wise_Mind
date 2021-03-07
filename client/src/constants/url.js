@@ -4,7 +4,8 @@ const API = 'api';
 
 export const URL = {
   HOME_TEXTS: `${serverUrl}/${API}/en/home/texts`,
-  NAVBAR: `${serverUrl}/${API}/en/home/menus`
+  NAVBAR: `${serverUrl}/${API}/en/menus`,
+  FOOTER: `${serverUrl}/${API}/en/footer`
 };
 
 export const BLANK = '_blank';

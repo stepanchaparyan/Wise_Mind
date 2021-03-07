@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import {
   Container,
   MainContainer,
@@ -15,7 +14,11 @@ import {
   PhoneIcon,
   PhoneText,
   LinksContainer,
+  StyledLink,
+  ArrowIcon,
+  Arrow,
   NewsLetterContainer,
+  NewsLetterText,
   BottomContainer,
   CompanyName,
   LogoContainer,
@@ -26,12 +29,11 @@ import {
   SocialMedia,
   IconContainer,
   MediaIcon,
-  LinksTitle
+  Title
 } from './FooterStyled';
-import { LINK } from '../../constants';
-import { BLANK, FACEBOOK_LINK, TWITTER_LINK, INSTAGRAM_LINK } from '../../constants/url';
-// import { getFooter } from '../../redux/actions/footerActions';
-import logo from '../../assets/logo.png';
+import { LINK } from '../../../constants';
+import { BLANK, FACEBOOK_LINK, TWITTER_LINK, INSTAGRAM_LINK } from '../../../constants/url';
+import logo from '../../../assets/logo.png';
 
 const facebook = 'facebook';
 const twitter = 'twitter';
@@ -39,12 +41,15 @@ const instagram = 'instagram';
 const alt = 'logo';
 
 const Footer = () => {
-  const dispatch = useDispatch();
-  // const { footer, loading } = useSelector(state => state.footer);
-
-  // useEffect(() => {
-  //   dispatch(getFooter());
-  // }, [dispatch]);
+  const linksList = [
+    { to: '/', text: 'Home' },
+    { to: '/about', text: 'About' },
+    { to: '/carrier_opportunities', text: 'Carrier Opportunities' },
+    { to: '/client_resources', text: 'Client Resources' },
+    { to: '/contact_us', text: 'Contact us' },
+    { to: '/terms_conditions', text: 'Terms conditions' },
+    { to: '/privacy_policy', text: 'Privacy policy' }
+  ];
 
   return (
     <Container>
@@ -74,16 +79,26 @@ const Footer = () => {
               <MailIcon />
               Email:
             </EmailSpan>
-            <EmailText class="mailto" href="mailto:wisemind2019@wisemindprocessinc.com">
+            <EmailText href="mailto:wisemind2019@wisemindprocessinc.com">
               wisemind2019@wisemindprocessinc.com
             </EmailText>
           </EmailContainer>
         </InfoContainer>
         <LinksContainer>
-          <LinksTitle>Links</LinksTitle>
+          <Title>Links</Title>
+          {linksList.map(({ to, text }) => (
+            <Arrow key={text}>
+              <ArrowIcon />
+              <StyledLink to={to}>{text}</StyledLink>
+            </Arrow>
+          ))}
         </LinksContainer>
         <NewsLetterContainer>
-          <div></div>
+          <Title>NewsLetter</Title>
+          <NewsLetterText>
+            Get the latest news regarding psychotherapy treatment and evidence-based methods with
+            our most recent newsletter issue!
+          </NewsLetterText>
         </NewsLetterContainer>
       </MainContainer>
       <BottomContainer>

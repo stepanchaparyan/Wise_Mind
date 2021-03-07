@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { tabletUp } from '../../styles/mediaQueries/mixins';
-import FacebookMetal from '../../assets/facebook-metal.png';
-import TwitterMetal from '../../assets/twitter-metal.png';
-import InstagramMetal from '../../assets/instagram-metal.png';
-import FacebookBlue from '../../assets/facebook-blue.png';
-import TwitterBlue from '../../assets/twitter-blue.png';
-import InstagramBlue from '../../assets/instagram-blue.png';
-import MailIconPNG from '../../assets/email.png';
-import PhoneIconPNG from '../../assets/mobile-phone.png';
-import AddressIconPNG from '../../assets/pin.png';
+import { tabletUp } from '../../../styles/mediaQueries/mixins';
+import FacebookMetal from '../../../assets/facebook-metal.png';
+import TwitterMetal from '../../../assets/twitter-metal.png';
+import InstagramMetal from '../../../assets/instagram-metal.png';
+import FacebookBlue from '../../../assets/facebook-blue.png';
+import TwitterBlue from '../../../assets/twitter-blue.png';
+import InstagramBlue from '../../../assets/instagram-blue.png';
+import MailIconPNG from '../../../assets/email.png';
+import PhoneIconPNG from '../../../assets/mobile-phone.png';
+import AddressIconPNG from '../../../assets/pin.png';
+import ArrowIconPNG from '../../../assets/arrow.png';
 
 export const Container = styled.div`
   display: flex;
@@ -17,9 +18,6 @@ export const Container = styled.div`
   background-color: ${props => props.theme.footerBlack};
   color: ${props => props.theme.footerTextColor};
   margin: 0;
-  align-items: center;
-  padding: 0 100px;
-  text-align: center;
 `;
 
 export const MainContainer = styled.div`
@@ -27,21 +25,21 @@ export const MainContainer = styled.div`
   font-family: sans-serif;
   font-size: 14px;
   letter-spacing: 0.4px;
-  margin: 80px auto 60px;
+  margin: 50px 100px 40px;
   justify-content: space-between;
 `;
 
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 40%;
   text-align: start;
   flex-wrap: wrap;
 `;
 
 export const Text = styled.div`
   display: flex;
-  padding: 24px 0 12px;
+  padding: 24px 0;
   line-height: 1.6;
   letter-spacing: 0.8px;
 `;
@@ -50,6 +48,7 @@ export const Address = styled.div`
   display: flex;
   line-height: 1.4;
   letter-spacing: 0.6px;
+  margin-bottom: 20px;
 `;
 
 export const AddressIcon = styled.div`
@@ -65,13 +64,13 @@ export const AddressIcon = styled.div`
 
 export const EmailContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  padding-top: 16px;
+  padding-top: 20px;
   line-height: 1.6;
 `;
 
 export const EmailSpan = styled.span`
   display: flex;
+  padding-right: 8px;
 `;
 
 export const MailIcon = styled.div`
@@ -116,21 +115,24 @@ export const PhoneText = styled.a`
   }
 `;
 
-export const LinksContainer = styled.div`
-  display: flex;
-  width: 20%;
-`;
-
 export const NewsLetterContainer = styled.div`
   display: flex;
-  width: 25%;
+  width: 20%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 30px;
+`;
+
+export const NewsLetterText = styled.div`
+  display: flex;
+  line-height: 1.6;
+  letter-spacing: 0.8px;
 `;
 
 export const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding: 16px;
+  padding: 16px 100px;
 `;
 
 export const TitleAndDate = styled.div`
@@ -146,6 +148,23 @@ export const CompanyName = styled.span`
   :hover {
     color: ${props => props.theme.lightBlue};
     transition: color 0.5s;
+  }
+`;
+
+export const TermsConditions = styled(NavLink)`
+  text-decoration: none;
+  color: ${props => props.theme.footerTextColor};
+  :hover {
+    color: ${props => props.theme.midLightGray};
+  }
+  margin: 14px 0;
+`;
+
+export const PrivacyPolicy = styled(NavLink)`
+  text-decoration: none;
+  color: ${props => props.theme.footerTextColor};
+  :hover {
+    color: ${props => props.theme.midLightGray};
   }
 `;
 
@@ -204,9 +223,41 @@ export const LogoText = styled.span`
   }
 `;
 
-export const LinksTitle = styled.div`
+export const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: flex-start;
+`;
+
+export const Title = styled.div`
   display: flex;
   color: white;
   font-size: 22px;
-  margin-top: 12px;
+  margin: 12px 0 34px;
+  align-self: center;
+`;
+
+export const StyledLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${props => props.theme.footerTextColor};
+  :hover {
+    color: ${props => props.theme.midLightGray};
+  }
+  margin: 8px 0;
+`;
+
+export const ArrowIcon = styled.div`
+  padding: 1px 4px;
+  margin: 12px 10px 0 0;
+  height: 6px;
+  width: 0;
+  background-image: url(${ArrowIconPNG});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+export const Arrow = styled.div`
+  display: flex;
 `;

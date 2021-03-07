@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Navbar from './containers/Navbar/Navbar';
-import Footer from './containers/Footer/Footer';
+import FooterContainer from './containers/Footer/FooterContainer';
 import Routes from './Routes';
 import theme from '../src/styles/theme';
 
@@ -13,7 +13,7 @@ const App = () => {
         <>
           <Navbar />
           <Routes />
-          <Footer />
+          <FooterContainer />
         </>
       </Router>
     </ThemeProvider>
