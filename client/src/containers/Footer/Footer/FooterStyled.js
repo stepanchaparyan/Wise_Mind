@@ -41,7 +41,6 @@ export const InfoContainer = styled.div`
   text-align: start;
   flex-wrap: no-wrap;
   ${tabletUp`
-    flex-direction: row;
     flex-wrap: wrap;
     width: 40%;
   `};
@@ -52,6 +51,7 @@ export const Text = styled.div`
   padding: 24px 0;
   line-height: 1.6;
   letter-spacing: 0.8px;
+  width: 100%;
 `;
 
 export const Address = styled.div`
@@ -59,6 +59,7 @@ export const Address = styled.div`
   line-height: 1.4;
   letter-spacing: 0.6px;
   margin-bottom: 20px;
+  width: 100%;
 `;
 
 export const AddressIcon = styled.div`

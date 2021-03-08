@@ -105,7 +105,7 @@ export const SendRequestContainer = styled.div`
 
 export const SendRequestButton = styled.a`
   display: flex;
-  padding: 10px 20px;
+  padding: 10px;
   border: solid 1px white;
   background: transparent;
   text-align: center;
