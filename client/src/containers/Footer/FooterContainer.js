@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getFooter } from '../../redux/actions/footerActions';
 import ContactUs from './ContactUs/ContactUs';
 import Footer from './Footer/Footer';
+import ScrollToTop from './ScrollToTop/ScrollToTop';
 
 const FooterContainer = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const FooterContainer = () => {
     <>
       <ContactUs texts={contactUsTexts}></ContactUs>
       <Footer></Footer>
+      <ScrollToTop></ScrollToTop>
     </>
   );
 };
