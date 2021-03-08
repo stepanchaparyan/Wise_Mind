@@ -29,7 +29,8 @@ import {
   SocialMedia,
   IconContainer,
   MediaIcon,
-  Title
+  Title,
+  AllRightsReserved
 } from './FooterStyled';
 import { LINK } from '../../../constants';
 import { BLANK, FACEBOOK_LINK, TWITTER_LINK, INSTAGRAM_LINK } from '../../../constants/url';
@@ -104,7 +105,7 @@ const Footer = () => {
       <BottomContainer>
         <TitleAndDate>
           <CompanyName>Wise Mind</CompanyName>
-          {`© ${new Date().getFullYear()}. All rights reserved.`}
+          <AllRightsReserved>{`© ${new Date().getFullYear()}. All rights reserved.`}</AllRightsReserved>
         </TitleAndDate>
         <SocialMedia>
           <IconContainer type={facebook} target={BLANK} href={FACEBOOK_LINK}>

@@ -11,7 +11,7 @@ import InstagramBlue from '../../../assets/instagram-blue.png';
 export const EmployeesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 60px 0;
+  padding-top: 20px;
   ${desktopUp`
     padding: 60px 10px;
   `};

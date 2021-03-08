@@ -1,28 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Container,
   Texts,
   SmallText,
   TitleText,
-  ButtonsContainer,
+  ButtonContainer,
   ButtonStyled,
-  MailIcon
+  MailIcon,
+  CheckBoxContainer,
+  CheckboxText
 } from './ContactUsStyled';
+import { BLANK, THERAPY_PORTAL } from '../../../constants/url';
 
 const ContactUs = ({ texts }) => {
+  const [isChecked, setChecked] = useState(false);
+  const checkBoxText = 'I have read and agree to the terms & conditions';
+
   return (
     <Container>
       <Texts>
         <TitleText>{texts?.title}</TitleText>
         <SmallText>{texts?.text}</SmallText>
       </Texts>
-      <ButtonsContainer>
+      <ButtonContainer>
         <ButtonStyled>
           <MailIcon />
           MAKE REQUEST
         </ButtonStyled>
-      </ButtonsContainer>
+        <CheckBoxContainer>
+          <input type="checkbox" checked={isChecked} onClick={() => setChecked(!isChecked)} />
+          {isChecked ? (
+            <CheckboxText ischecked={isChecked} target={BLANK} href={THERAPY_PORTAL}>
+              {checkBoxText}
+            </CheckboxText>
+          ) : (
+            <CheckboxText>{checkBoxText}</CheckboxText>
+          )}
+        </CheckBoxContainer>
+      </ButtonContainer>
     </Container>
   );
 };

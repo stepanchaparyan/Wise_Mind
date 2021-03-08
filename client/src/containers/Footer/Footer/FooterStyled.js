@@ -22,19 +22,29 @@ export const Container = styled.div`
 
 export const MainContainer = styled.div`
   display: flex;
+  flex-direction: column;
   font-family: sans-serif;
   font-size: 14px;
   letter-spacing: 0.4px;
-  margin: 50px 100px 40px;
+  margin: 50px 40px 40px;
   justify-content: space-between;
+  ${tabletUp`
+    flex-direction: row;
+    margin: 50px 100px 40px;
+  `};
 `;
 
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
   text-align: start;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  ${tabletUp`
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40%;
+  `};
 `;
 
 export const Text = styled.div`
@@ -66,6 +76,10 @@ export const EmailContainer = styled.div`
   display: flex;
   padding-top: 20px;
   line-height: 1.6;
+  flex-direction: column;
+  ${tabletUp`
+    flex-direction: row;
+  `};
 `;
 
 export const EmailSpan = styled.span`
@@ -117,10 +131,12 @@ export const PhoneText = styled.a`
 
 export const NewsLetterContainer = styled.div`
   display: flex;
-  width: 20%;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 30px;
+  ${tabletUp`
+    width: 20%;
+  `};
 `;
 
 export const NewsLetterText = styled.div`
@@ -132,18 +148,35 @@ export const NewsLetterText = styled.div`
 export const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 16px 100px;
+  flex-direction: column;
+  padding: 20px 40px;
+  ${tabletUp`
+    flex-direction: row;
+    padding: 16px 100px;
+  `};
 `;
 
 export const TitleAndDate = styled.div`
   display: flex;
+  flex-direction: column;
   letter-spacing: 0.4px;
   margin: auto 0;
+  font-size: 16px;
+  align-self: center;
+  ${tabletUp`
+    flex-direction: row;
+  `};
+`;
+
+export const AllRightsReserved = styled.div`
+  display: flex;
 `;
 
 export const CompanyName = styled.span`
   margin-right: 5px;
   cursor: pointer;
+  align-self: center;
+  margin-bottom: 8px;
   color: inherit;
   :hover {
     color: ${props => props.theme.lightBlue};
@@ -170,6 +203,7 @@ export const PrivacyPolicy = styled(NavLink)`
 
 export const SocialMedia = styled.div`
   display: flex;
+  align-self: center;
 `;
 
 export const MediaIcon = styled.div`
@@ -226,16 +260,22 @@ export const LogoText = styled.span`
 export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 100%;
   align-items: flex-start;
+  ${tabletUp`
+    width: 20%;
+  `};
 `;
 
 export const Title = styled.div`
   display: flex;
   color: white;
   font-size: 22px;
-  margin: 12px 0 34px;
+  margin: 40px 0 15px;
   align-self: center;
+  ${tabletUp`
+    margin: 12px 0 34px;
+  `};
 `;
 
 export const StyledLink = styled(NavLink)`

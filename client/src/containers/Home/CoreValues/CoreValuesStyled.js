@@ -86,15 +86,6 @@ export const Container = styled.div`
   `};
 `;
 
-// export const Image = styled.div`
-//   background-image: url(${Core_Values_1});
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   max-width: 100%;
-//   height: 300px;
-// `;
-
 export const Image = styled.img`
   width: 100%;
   height: 100%;
@@ -164,12 +155,15 @@ export const WhoWeAre = styled.div`
 export const WhoWeAreTitleText = styled.div`
   display: flex;
   padding: 24px 24px 4px 24px;
-  font-size: 48px;
+  font-size: 44px;
   letter-spacing: 1.8px;
   transition: color 0.5s;
   :hover {
     color: ${props => props.theme.lightBlue};
   }
+  ${tabletUp`
+    font-size: 48px;
+  `};
 `;
 
 export const WhoWeAreMainText = styled.div`

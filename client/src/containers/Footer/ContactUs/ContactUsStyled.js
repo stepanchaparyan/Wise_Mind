@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
   background: ${props => props.theme.lighterBlue};
   height: 270px;
-  padding: 40px 50px 30px 50px;
+  padding: 50px;
   ${tabletUp`
     height: 160px;
     flex-direction: row;
@@ -36,22 +36,23 @@ export const TitleText = styled.div`
 export const SmallText = styled.div`
   font-family: 'Lora';
   margin: 10px 0 0;
+  max-width: 520px;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 1px;
-  ${tabletUp`
-    margin: 10px 110px 0 0;
-  `};
 `;
 
-export const ButtonsContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
+  flex-direction: column;
   height: 100px;
 `;
 
 export const ButtonStyled = styled.button`
   min-width: 180px;
-  margin: 24px 0;
+  width: 180px;
+  margin: 24px 0 8px 5px;
+  padding: 10px;
   align-items: center;
   text-decoration: none;
   border-radius: 3px;
@@ -77,4 +78,14 @@ export const MailIcon = styled.div.attrs({ as: 'span' })`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+`;
+
+export const CheckBoxContainer = styled.div``;
+
+export const CheckboxText = styled.a`
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  margin-left: 4px;
+  cursor: ${props => (props.ischecked ? 'pointer' : 'not-allowed')};
 `;
