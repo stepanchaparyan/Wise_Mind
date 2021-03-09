@@ -146,7 +146,7 @@ module.exports = {
         use: cssLoaders('sass-loader')
       },
       {
-        test: /\.(png|jpe?g|svg|gif)$/,
+        test: /\.(png|jpe?g|svg|gif|webp|jp2)$/,
         use: [
           'file-loader',
           {

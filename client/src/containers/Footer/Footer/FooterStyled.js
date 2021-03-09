@@ -302,3 +302,7 @@ export const ArrowIcon = styled.div`
 export const Arrow = styled.div`
   display: flex;
 `;
+
+export const DMCA = styled.div`
+  margin: 10px 0 0 -4px;
+`;

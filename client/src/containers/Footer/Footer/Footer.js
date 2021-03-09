@@ -30,7 +30,8 @@ import {
   IconContainer,
   MediaIcon,
   Title,
-  AllRightsReserved
+  AllRightsReserved,
+  DMCA
 } from './FooterStyled';
 import { LINK } from '../../../constants';
 import { BLANK, FACEBOOK_LINK, TWITTER_LINK, INSTAGRAM_LINK } from '../../../constants/url';
@@ -100,6 +101,19 @@ const Footer = () => {
             Get the latest news regarding psychotherapy treatment and evidence-based methods with
             our most recent newsletter issue!
           </NewsLetterText>
+          <DMCA>
+            <a
+              href="//www.dmca.com/Protection/Status.aspx?ID=ee666a97-0e83-434e-b545-94a68eadadf8"
+              title="DMCA.com Protection Status"
+              className="dmca-badge"
+            >
+              <img
+                src="https://images.dmca.com/Badges/dmca-badge-w200-5x1-02.png?ID=ee666a97-0e83-434e-b545-94a68eadadf8"
+                alt="DMCA.com Protection Status"
+              />
+            </a>
+            <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+          </DMCA>
         </NewsLetterContainer>
       </MainContainer>
       <BottomContainer>
