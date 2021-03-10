@@ -29,7 +29,7 @@ const ContactUs = ({ texts }) => {
           MAKE REQUEST
         </ButtonStyled>
         <CheckBoxContainer>
-          <input type="checkbox" checked={isChecked} onClick={() => setChecked(!isChecked)} />
+          <input type="checkbox" defaultChecked={false} onClick={() => setChecked(!isChecked)} />
           {isChecked ? (
             <CheckboxText ischecked={isChecked} target={BLANK} href={THERAPY_PORTAL}>
               {checkBoxText}
