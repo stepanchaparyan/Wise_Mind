@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   MainContainer,
@@ -42,7 +43,7 @@ const twitter = 'twitter';
 const instagram = 'instagram';
 const alt = 'logo';
 
-const Footer = () => {
+const Footer = ({ infoText, address, phone, email, newsLetter }) => {
   const linksList = [
     { to: '/', text: 'Home' },
     { to: '/about', text: 'About' },
@@ -63,27 +64,25 @@ const Footer = () => {
             </ImageContainer>
             <LogoText>WISE MIND</LogoText>
           </LogoContainer>
-          <Text>
-            Our mental health clinicians strive to be proficient in culture sensitive and
-            evidence-based psychotherapy treatment tailored to our clients’ specific needs.
-          </Text>
+          <Text>{infoText?.text}</Text>
           <Address>
             <AddressIcon />
-            Address: During this pandemic we mainly offer telehealth. Physical address will be
-            available later. Please, contact us for more information.
+            {address?.title}
+            {address?.text}
           </Address>
           <Phone>
             <PhoneIcon />
-            <PhoneText href="tel:+424-333-2933">Phone: +424-333-2933</PhoneText>
+            <PhoneText href="tel:+424-333-2933">
+              {phone?.title}
+              {phone?.text}
+            </PhoneText>
           </Phone>
           <EmailContainer>
             <EmailSpan>
               <MailIcon />
-              Email:
+              {email?.title}
             </EmailSpan>
-            <EmailText href="mailto:wisemind2019@wisemindprocessinc.com">
-              wisemind2019@wisemindprocessinc.com
-            </EmailText>
+            <EmailText href="mailto:wisemind2019@wisemindprocessinc.com">{email?.text}</EmailText>
           </EmailContainer>
         </InfoContainer>
         <LinksContainer>
@@ -96,11 +95,8 @@ const Footer = () => {
           ))}
         </LinksContainer>
         <NewsLetterContainer>
-          <Title>NewsLetter</Title>
-          <NewsLetterText>
-            Get the latest news regarding psychotherapy treatment and evidence-based methods with
-            our most recent newsletter issue!
-          </NewsLetterText>
+          <Title>{newsLetter?.title}</Title>
+          <NewsLetterText>{newsLetter?.text}</NewsLetterText>
           <DMCA>
             <a
               href="//www.dmca.com/Protection/Status.aspx?ID=ee666a97-0e83-434e-b545-94a68eadadf8"
@@ -135,6 +131,39 @@ const Footer = () => {
       </BottomContainer>
     </Container>
   );
+};
+
+Footer.propTypes = {
+  infoText: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  }),
+  address: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  }),
+  phone: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  }),
+  email: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  }),
+  newsLetter: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    section: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
+  })
 };
 
 export default Footer;
