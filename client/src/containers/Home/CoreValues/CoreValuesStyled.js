@@ -149,7 +149,7 @@ export const WhoWeAre = styled.div`
   align-items: center;
   color: ${props => props.theme.midLightBlack};
   align-self: center;
-  padding-bottom: 24px;
+  padding-bottom: 56px;
 `;
 
 export const WhoWeAreTitleText = styled.div`

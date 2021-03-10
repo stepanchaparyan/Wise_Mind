@@ -2,11 +2,7 @@ import { serverUrl } from '../../environment';
 
 const API = 'api';
 
-export const URL = {
-  HOME_TEXTS: `${serverUrl}/${API}/en/home/texts`,
-  NAVBAR: `${serverUrl}/${API}/en/menus`,
-  FOOTER: `${serverUrl}/${API}/en/footer`
-};
+export const BASE_URL = `${serverUrl}/${API}/`;
 
 export const BLANK = '_blank';
 export const SELF = '_self';

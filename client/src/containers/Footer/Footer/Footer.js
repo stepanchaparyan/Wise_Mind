@@ -46,7 +46,7 @@ const Footer = () => {
   const linksList = [
     { to: '/', text: 'Home' },
     { to: '/about', text: 'About' },
-    { to: '/carrier_opportunities', text: 'Carrier Opportunities' },
+    { to: '/career_opportunities', text: 'Career Opportunities' },
     { to: '/client_resources', text: 'Client Resources' },
     { to: '/contact_us', text: 'Contact us' },
     { to: '/terms_conditions', text: 'Terms conditions' },

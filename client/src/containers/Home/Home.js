@@ -18,7 +18,7 @@ const Home = () => {
   const employeesTitleText = homeTexts.find(item => item.section === 'employeesTitleText');
 
   useEffect(() => {
-    dispatch(getHomeTexts());
+    dispatch(getHomeTexts('en'));
   }, [dispatch]);
 
   return (

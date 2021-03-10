@@ -36,7 +36,7 @@ const Navbar = () => {
   const sentRequest = navbar.find(item => item.title === sendRequestText);
 
   useEffect(() => {
-    dispatch(getNavbar());
+    dispatch(getNavbar('en'));
   }, [dispatch]);
 
   useEffect(() => {

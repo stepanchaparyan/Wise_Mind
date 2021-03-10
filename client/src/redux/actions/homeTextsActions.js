@@ -1,14 +1,16 @@
 import * as actionTypes from '../constants/constants';
 import axios from 'axios';
-import { URL } from '../../constants';
+import { BASE_URL } from '../../constants/url';
 
-const { HOME_TEXTS } = URL;
+const createURL = lang => {
+  return `${BASE_URL}/${lang}/home/texts`;
+};
 
-export const getHomeTexts = () => async dispatch => {
+export const getHomeTexts = lang => async dispatch => {
   try {
     dispatch({ type: actionTypes.GET_HOME_TEXTS_REQUEST });
 
-    const { data } = await axios.get(HOME_TEXTS);
+    const { data } = await axios.get(createURL(lang));
 
     dispatch({
       type: actionTypes.GET_HOME_TEXTS_SUCCESS,

@@ -1,14 +1,16 @@
 import * as actionTypes from '../constants/constants';
 import axios from 'axios';
-import { URL } from '../../constants';
+import { BASE_URL } from '../../constants/url';
 
-const { NAVBAR } = URL;
+const createURL = lang => {
+  return `${BASE_URL}/${lang}/menus`;
+};
 
-export const getNavbar = () => async dispatch => {
+export const getNavbar = lang => async dispatch => {
   try {
     dispatch({ type: actionTypes.GET_NAVBAR_REQUEST });
 
-    const { data } = await axios.get(NAVBAR);
+    const { data } = await axios.get(createURL(lang));
 
     dispatch({
       type: actionTypes.GET_NAVBAR_SUCCESS,

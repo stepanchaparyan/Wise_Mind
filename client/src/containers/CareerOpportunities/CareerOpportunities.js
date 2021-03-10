@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container, Module, WelcomeText, LongText, LinkStyled } from './CarrierOpportunitiesStyled';
+import { Container, Module, WelcomeText, LongText, LinkStyled } from './CareerOpportunitiesStyled';
 import { LINK } from '../../constants';
 
-const CarrierOpportunities = () => {
+const CareerOpportunities = () => {
   return (
     <>
       <Container>
         <Module>
-          <WelcomeText>{'CarrierOpportunities'}</WelcomeText>
-          <LongText>{'CarrierOpportunities'}</LongText>
+          <WelcomeText>{'CareerOpportunities'}</WelcomeText>
+          <LongText>{'CareerOpportunities'}</LongText>
           <LinkStyled to={LINK.TO.HOME}>{'GO HOME'}</LinkStyled>
         </Module>
       </Container>
@@ -27,4 +27,4 @@ const CarrierOpportunities = () => {
   );
 };
 
-export default CarrierOpportunities;
+export default CareerOpportunities;

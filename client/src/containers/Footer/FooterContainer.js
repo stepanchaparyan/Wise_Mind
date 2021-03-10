@@ -11,7 +11,7 @@ const FooterContainer = () => {
   const contactUsTexts = footer.find(item => item.section === 'contactUs');
 
   useEffect(() => {
-    dispatch(getFooter());
+    dispatch(getFooter('en'));
   }, [dispatch]);
 
   return (

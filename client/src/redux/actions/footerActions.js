@@ -1,14 +1,16 @@
 import * as actionTypes from '../constants/constants';
 import axios from 'axios';
-import { URL } from '../../constants';
+import { BASE_URL } from '../../constants/url';
 
-const { FOOTER } = URL;
+const createURL = lang => {
+  return `${BASE_URL}/${lang}/footer`;
+};
 
-export const getFooter = () => async dispatch => {
+export const getFooter = lang => async dispatch => {
   try {
     dispatch({ type: actionTypes.GET_FOOTER_REQUEST });
 
-    const { data } = await axios.get(FOOTER);
+    const { data } = await axios.get(createURL(lang));
 
     dispatch({
       type: actionTypes.GET_FOOTER_SUCCESS,
