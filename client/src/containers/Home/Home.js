@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getHomeTexts } from '../../redux/actions/homeTextsActions';
 import Loading from '../../components/Loading/Loading';
 import Welcome from './Welcome/Welcome';
@@ -7,7 +8,7 @@ import CoreValues from './CoreValues/CoreValues';
 import Treatments from './Treatments/Treatments';
 import Employees from './Employees/Employees';
 
-const Home = () => {
+const Home = ({ language }) => {
   const dispatch = useDispatch();
   const { homeTexts, loading, error } = useSelector(state => state.homeTexts);
   const treatments = homeTexts.filter(item => item.section === 'treatment');
@@ -18,8 +19,8 @@ const Home = () => {
   const employeesTitleText = homeTexts.find(item => item.section === 'employeesTitleText');
 
   useEffect(() => {
-    dispatch(getHomeTexts('en'));
-  }, [dispatch]);
+    dispatch(getHomeTexts(language.toLowerCase()));
+  }, [dispatch, language]);
 
   return (
     <>
@@ -39,6 +40,10 @@ const Home = () => {
       )}
     </>
   );
+};
+
+Home.propTypes = {
+  language: PropTypes.string.isRequired
 };
 
 export default Home;

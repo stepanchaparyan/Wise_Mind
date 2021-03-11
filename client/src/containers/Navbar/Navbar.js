@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   Container,
   LogoContainer,
@@ -8,36 +9,37 @@ import {
   StyledLink,
   SendRequestButton,
   NavLinkContainer,
-  SendRequestContainer,
+  RightContainer,
   PaperPlaneIcon,
-  Hamburger
+  Hamburger,
+  ReactFlagsSelectStyled
 } from './NavbarStyled';
 import logo from '../../assets/logo.png';
 import hamburger from '../../assets/hamburger.png';
 import { LINK } from '../../constants';
 import { BLANK } from '../../constants/url';
 import { getNavbar } from '../../redux/actions/navbarActions';
-import Loading from '../../components/Loading/Loading';
 import { useOnClickOutside } from '../../hooks/clickOutSide';
 
 const alt = 'logo';
 
-const Navbar = () => {
+const Navbar = ({ language, setLanguage }) => {
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState(false);
   const node = useRef();
-  const sendRequestText = 'Send Request';
 
   useOnClickOutside(node, () => setOpen(false));
 
   const dispatch = useDispatch();
   const { navbar, loading } = useSelector(state => state.navbar);
-  const navbarMenus = navbar.filter(item => item.title !== sendRequestText);
-  const sentRequest = navbar.find(item => item.title === sendRequestText);
+  const sentRequest = navbar.find(item => item.section === 'sendRequest');
+  const navbarMenus = navbar
+    .filter(item => item.section === 'navbar')
+    .sort((a, b) => a.number.localeCompare(b.number));
 
   useEffect(() => {
-    dispatch(getNavbar('en'));
-  }, [dispatch]);
+    dispatch(getNavbar(language.toLowerCase()));
+  }, [dispatch, language]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -71,17 +73,37 @@ const Navbar = () => {
               ))}
             </NavLinks>
           </NavLinkContainer>
-          <SendRequestContainer open={open}>
+          <RightContainer open={open}>
+            <ReactFlagsSelectStyled
+              countries={['US', 'ES', 'FR', 'DE', 'RU', 'AM']}
+              customLabels={{
+                US: 'English',
+                FR: 'French',
+                DE: 'Germany',
+                RU: 'Russian',
+                AM: 'Armenian',
+                ES: 'Spain'
+              }}
+              selected={language}
+              onSelect={code => setLanguage(code)}
+              selectedSize={14}
+              placeholder={'English'}
+            />
             <SendRequestButton target={BLANK} href={sentRequest?.link}>
               {sentRequest?.title}
               <PaperPlaneIcon />
             </SendRequestButton>
-          </SendRequestContainer>
+          </RightContainer>
           <Hamburger src={hamburger} onClick={toggle}></Hamburger>
         </Container>
       )}
     </>
   );
+};
+
+Navbar.propTypes = {
+  language: PropTypes.string.isRequired,
+  setLanguage: PropTypes.func.isRequired
 };
 
 export default Navbar;

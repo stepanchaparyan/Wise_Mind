@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getFooter } from '../../redux/actions/footerActions';
 import ContactUs from './ContactUs/ContactUs';
 import Footer from './Footer/Footer';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Loading from '../../components/Loading/Loading';
 
-const FooterContainer = () => {
+const FooterContainer = ({ language }) => {
   const dispatch = useDispatch();
   const { footer, loading } = useSelector(state => state.footer);
   const contactUsTexts = footer.find(item => item.section === 'contactUs');
@@ -17,8 +18,8 @@ const FooterContainer = () => {
   const newsLetter = footer.find(item => item.title === 'NewsLetter');
 
   useEffect(() => {
-    dispatch(getFooter('en'));
-  }, [dispatch]);
+    dispatch(getFooter(language.toLowerCase()));
+  }, [dispatch, language]);
 
   return (
     <>
@@ -39,6 +40,10 @@ const FooterContainer = () => {
       )}
     </>
   );
+};
+
+FooterContainer.propTypes = {
+  language: PropTypes.string.isRequired
 };
 
 export default FooterContainer;

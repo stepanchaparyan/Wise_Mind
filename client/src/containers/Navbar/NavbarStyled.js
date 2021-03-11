@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { tabletUp } from '../../styles/mediaQueries/mixins';
+import { desktopUp } from '../../styles/mediaQueries/mixins';
 import PaperPlaneWhite from '../../assets/paper-plane-16_white.png';
 import PaperPlaneGray from '../../assets/paper-plane-16_gray.png';
+import ReactFlagsSelect from 'react-flags-select';
 
 export const Container = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ export const LogoContainer = styled(NavLink)`
   margin: 0;
   padding: 0;
   padding-left: 16px;
-  ${tabletUp`
+  ${desktopUp`
     padding-left: 100px;
   `};
 `;
@@ -34,15 +35,16 @@ export const Logo = styled.img`
 
 export const NavLinks = styled.div`
   display: flex;
-  margin-left: 250px;
   font-family: sans-serif;
   font-size: 14px;
   letter-spacing: 0.4px;
-  margin: auto;
-  align-items: center;
+  margin: 120px auto auto 30px;
+  align-items: baseline;
   flex-direction: column;
-  ${tabletUp`
+  ${desktopUp`
     flex-direction: row;
+    margin: auto;
+    align-items: center;
   `};
 `;
 
@@ -54,7 +56,7 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   color: ghostwhite;
   margin: 10px 20px;
   font-weight: bold;
-  ${tabletUp`
+  ${desktopUp`
     margin: 0 20px;
     align-self: auto;
   `};
@@ -78,7 +80,7 @@ export const NavLinkContainer = styled.div`
   width: 100%;
   height: 300px;
   z-index: 1;
-  ${tabletUp`
+  ${desktopUp`
     display: flex;
     background: none;
     position: relative;
@@ -86,7 +88,8 @@ export const NavLinkContainer = styled.div`
   `};
 `;
 
-export const SendRequestContainer = styled.div`
+export const RightContainer = styled.div`
+  flex-direction: column;
   font-weight: bold;
   display: ${({ open }) => (open ? 'flex' : 'none')};
   background: ${props => props.theme.black};
@@ -94,18 +97,20 @@ export const SendRequestContainer = styled.div`
   position: absolute;
   top: 70px;
   right: 10px;
-  ${tabletUp`
+  ${desktopUp`
     display: flex;
+    flex-direction: row;
     position: relative;
     background: none;
     padding-right: 30px;
-    top: 2px;
+    top: 3px;
   `};
 `;
 
 export const SendRequestButton = styled.a`
   display: flex;
-  padding: 10px;
+  padding: 8px;
+  height: 16px;
   border: solid 1px white;
   background: transparent;
   text-align: center;
@@ -115,6 +120,9 @@ export const SendRequestButton = styled.a`
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
+  ${desktopUp`
+    margin-left: 30px;
+  `};
   :hover {
     background: white;
     color: gray;
@@ -140,7 +148,24 @@ export const Hamburger = styled.img`
   height: 32px;
   right: 14px;
   top: 14px;
-  ${tabletUp`
+  ${desktopUp`
     display: none;
+  `};
+`;
+
+export const ReactFlagsSelectStyled = styled(ReactFlagsSelect)`
+  button {
+    color: white;
+    padding: 4px;
+    font-weight: bold;
+    border: 1px solid;
+    outline: none;
+    ${desktopUp`
+      background: slategray;
+      border: none;
+    `};
+  }
+  ${desktopUp`
+    min-width: 130px;
   `};
 `;
