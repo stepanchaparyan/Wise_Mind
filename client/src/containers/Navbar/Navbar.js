@@ -20,6 +20,7 @@ import { LINK } from '../../constants';
 import { BLANK } from '../../constants/url';
 import { getNavbar } from '../../redux/actions/navbarActions';
 import { useOnClickOutside } from '../../hooks/clickOutSide';
+import { languageTransformer } from '../../util/languageTransformer';
 
 const alt = 'logo';
 
@@ -57,6 +58,8 @@ const Navbar = ({ language, setLanguage }) => {
     setOpen(!open);
   };
 
+  const languagesList = ['en', 'es', 'de', 'fr', 'ru', 'hy']; // will delete later
+
   return (
     <>
       {!loading && (
@@ -75,14 +78,14 @@ const Navbar = ({ language, setLanguage }) => {
           </NavLinkContainer>
           <RightContainer open={open}>
             <ReactFlagsSelectStyled
-              countries={['US', 'ES', 'FR', 'DE', 'RU', 'AM']}
+              countries={languageTransformer(languagesList)}
               customLabels={{
                 US: 'English',
                 FR: 'French',
                 DE: 'Germany',
                 RU: 'Russian',
                 AM: 'Armenian',
-                ES: 'Spain'
+                ES: 'Spanish'
               }}
               selected={language}
               onSelect={code => setLanguage(code)}

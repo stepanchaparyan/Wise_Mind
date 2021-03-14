@@ -3,9 +3,7 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 app.use(cors());
 
