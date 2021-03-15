@@ -44,6 +44,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.1",
+    "cwebp-bin": "^6.1.1",
     "fs-extra": "^9.0.1",
     "image-webpack-loader": "^7.0.1",
     "normalize.css": "^8.0.1",
