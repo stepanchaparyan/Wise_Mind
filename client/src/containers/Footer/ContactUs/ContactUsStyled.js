@@ -89,3 +89,8 @@ export const CheckboxText = styled.a`
   margin-left: 4px;
   cursor: ${props => (props.ischecked ? 'pointer' : 'not-allowed')};
 `;
+
+export const MainContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+`;

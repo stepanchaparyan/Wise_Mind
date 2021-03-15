@@ -6,6 +6,7 @@ import ContactUs from './ContactUs/ContactUs';
 import Footer from './Footer/Footer';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Loading from '../../components/Loading/Loading';
+import { MainContainer } from './ContactUs/ContactUsStyled';
 
 const FooterContainer = ({ language }) => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const FooterContainer = ({ language }) => {
       {loading ? (
         <Loading></Loading>
       ) : (
-        <>
+        <MainContainer>
           <ContactUs texts={contactUsTexts}></ContactUs>
           <Footer
             infoText={infoText}
@@ -36,7 +37,7 @@ const FooterContainer = ({ language }) => {
             newsLetter={newsLetter}
           ></Footer>
           <ScrollToTop></ScrollToTop>
-        </>
+        </MainContainer>
       )}
     </>
   );
