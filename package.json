@@ -4,10 +4,10 @@
   "description": "Medical",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
-    "build": "rimraf build && cross-env NODE_ENV=production webpack --mode production",
-    "dev": "rimraf build && cross-env NODE_ENV=development webpack --mode development",
-    "dev-server": "rimraf build && cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server --mode development",
+    "start": "NODE_ENV=development webpack-dev-server --mode development --open",
+    "build": "rimraf build && NODE_ENV=production webpack --mode production",
+    "dev": "rimraf build && NODE_ENV=development webpack --mode development",
+    "dev-server": "rimraf build && NODE_ENV=development webpack-dashboard -- webpack-dev-server --mode development",
     "eslint": "eslint .",
     "eslint-fix": "eslint --fix \"src/**/*.js\"",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
@@ -78,7 +78,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.1.0",
     "copy-webpack-plugin": "^5.1.1",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^3.2.0",
     "cssnano-webpack-plugin": "^1.0.3",
     "csv-loader": "^3.0.2",
