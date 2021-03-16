@@ -16,7 +16,8 @@ import {
   MediaIcon,
   IconContainer
 } from './EmployeesStyled';
-import img from '../../../assets/photo.webp';
+// import img from '../../../assets/photo.webp';
+import img from '../../../assets/photo.jpg';
 
 const facebook = 'facebook';
 const twitter = 'twitter';
