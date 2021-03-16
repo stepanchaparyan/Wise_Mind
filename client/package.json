@@ -44,6 +44,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.2",
     "fs-extra": "^9.0.1",
     "image-webpack-loader": "^7.0.1",
     "normalize.css": "^8.0.1",
@@ -78,7 +79,6 @@
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.1.0",
     "copy-webpack-plugin": "^5.1.1",
-    "cross-env": "^7.0.2",
     "css-loader": "^3.2.0",
     "cssnano-webpack-plugin": "^1.0.3",
     "csv-loader": "^3.0.2",
