@@ -14,8 +14,8 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <>
-          {/* <Navbar language={language} setLanguage={setLanguage} /> */}
-          {/* <Routes language={language} /> */}
+          <Navbar language={language} setLanguage={setLanguage} />
+          <Routes language={language} />
           <FooterContainer language={language} />
         </>
       </Router>

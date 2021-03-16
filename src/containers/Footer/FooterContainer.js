@@ -28,15 +28,14 @@ const FooterContainer = ({ language }) => {
         <Loading></Loading>
       ) : (
         <MainContainer>
-          <div>dddddddddddddddddddddddddddddddddddddddddddddddd</div>
-          {/* <ContactUs texts={contactUsTexts}></ContactUs> */}
-          {/* <Footer
+          <ContactUs texts={contactUsTexts}></ContactUs>
+          <Footer
             infoText={infoText}
             address={address}
             phone={phone}
             email={email}
             newsLetter={newsLetter}
-          ></Footer> */}
+          ></Footer>
           <ScrollToTop></ScrollToTop>
         </MainContainer>
       )}
